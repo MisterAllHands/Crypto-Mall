@@ -15,6 +15,10 @@ class DeveloperPreview {
     
     let homeVM = HomeViewModel()
     
+    let state1 = Statistics(title: "Market Cap", value: "$12.5Bn", percantageChange: 25.12)
+    let state2 = Statistics(title: "Total Volume", value: "$1.23Tr")
+    let state3 = Statistics(title: "Portfolio Value", value: "£50.4K", percantageChange: -12.04)
+    
     let crypto = CryptoModel(
         
         id: "bitcoin",

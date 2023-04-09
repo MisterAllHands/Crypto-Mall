@@ -25,10 +25,14 @@ class CryptoImageService {
         getCoinImage()
     }
     
+    //Getting saved images from created folder
+    
     private func getCoinImage () {
         if let savedImage = fileManager.getImage(imageName: imageName, storageName: storageName) {
             image = savedImage
             print("Retreiving images from folders")
+            
+            //if there is no image, we download them
         }else {
             downloadCryptoImage()
             print("downloading images")
@@ -36,7 +40,6 @@ class CryptoImageService {
     }
     
     private func downloadCryptoImage() {
-        
         
         guard let url = URL(string: crypto.image)
         else {
@@ -50,6 +53,8 @@ class CryptoImageService {
                 guard let self = self , let downloadedImage = returnedImage else {return}
                 self.image = downloadedImage
                 self.imageSubscription?.cancel()
+                //When successfyully downloaded, we save them to be able to trigger the getCoinImage function to check for saved images
+                
                 self.fileManager.saveImage(image: downloadedImage, imageName: self.imageName, storageName: self.storageName)
             })
     }

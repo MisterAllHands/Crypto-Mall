@@ -18,8 +18,11 @@ struct HomeView: View {
                 .ignoresSafeArea()
             VStack {
                 homeHeader
-                columHeadings
+                SearchbarView(searchText: $vm.searchText)
+                HomeStatsView(showPortfolio: $showPortfolio)
                 
+                columHeadings
+    
                 if !showPortfolio {
                      allCryptoList
                         .transition(.move(edge: .leading))
