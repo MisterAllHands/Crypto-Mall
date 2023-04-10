@@ -13,12 +13,12 @@ struct Statistics: Identifiable {
     let id = UUID().uuidString
     let title: String
     let value: String
-    let percantageChange: Double?
+    let percentageChange: Double?
  
     init(title: String, value: String, percantageChange: Double? = nil) {
         self.title = title
         self.value = value
-        self.percantageChange = percantageChange
+        self.percentageChange = percantageChange
     }
 }
  

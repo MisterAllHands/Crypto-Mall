@@ -63,78 +63,13 @@ import SwiftUI
        "ngn": 557413756681267.3,
        "nok": 12795671000117.68,
        "nzd": 1945125848025.6238,
-       "php": 66434446930386.266,
-       "pkr": 340228943900327.4,
-       "pln": 5228902655419.935,
-       "rub": 99001583350073.44,
-       "sar": 4573380397165.368,
-       "sek": 12767873142183.717,
-       "sgd": 1621297871955.1501,
-       "thb": 41372587067556.484,
-       "try": 23467853879025.906,
-       "twd": 37073687352607.32,
-       "uah": 44512402670164.37,
-       "vef": 122078926093.29883,
-       "vnd": 28584244704458130,
-       "zar": 22036764069188.156,
-       "xdr": 898314601630.3516,
-       "xag": 48815062411.160484,
-       "xau": 607273467.4704018,
-       "bits": 43645047614778.375,
+   
        "sats": 4364504761477837.5
      },
      "total_volume": {
        "btc": 1184824.7521303934,
-       "eth": 17992531.754054062,
-       "ltc": 367732872.9080255,
-       "bch": 266963110.50910828,
-       "bnb": 106640984.25932638,
-       "eos": 27851248557.863842,
-       "xrp": 65706264169.74335,
-       "xlm": 319510083639.58044,
-       "link": 4656794263.678933,
-       "dot": 5417255717.067265,
-       "yfi": 3845750.513719672,
-       "usd": 33097533534.23093,
-       "aed": 121554001657.81693,
-       "ars": 6930997855172.224,
-       "aud": 49606616358.63882,
-       "bdt": 3479341871694.2095,
-       "bhd": 12400487401.602604,
-       "bmd": 33097533534.23093,
-       "brl": 167366945625.22845,
-       "cad": 44878600595.74048,
-       "chf": 29971901759.85876,
-       "clp": 26932769892915.324,
-       "cny": 227403223653.64014,
-       "czk": 707661674248.7445,
-       "dkk": 226076012558.91797,
-       "eur": 30103729235.92562,
-       "gbp": 26646427078.006954,
-       "hkd": 259807363860.32965,
-       "huf": 11397797623183.1,
-       "idr": 494508593658267.6,
-       "ils": 118820079192.82239,
-       "inr": 2708718627013.161,
-       "jpy": 4374002951231.9995,
-       "krw": 43570917045802.95,
-       "kwd": 10153992312.966703,
-       "lkr": 10509743104913.87,
-       "mmk": 69024147126804.56,
-       "mxn": 599919273334.7625,
-       "myr": 145728440151.21872,
-       "ngn": 15132017312093.098,
-       "nok": 347361924195.10724,
-       "nzd": 52804003585.7132,
-       "php": 1803484734670.3801,
-       "pkr": 9236137801526.783,
-       "pln": 141948139163.53976,
-       "rub": 2687579298539.9146,
-       "sar": 124152786893.39041,
-       "sek": 346607300430.5267,
-       "sgd": 44013100093.820335,
-       "thb": 1123134648631.077,
-       "try": 637077874233.6436,
+  
+   
        "twd": 1006433142559.7809,
        "uah": 1208370693644.243,
        "vef": 3314056032.782538,
@@ -163,32 +98,42 @@ import SwiftUI
    }
  }
  /**/*/
+ 
+ 
 
 struct MData: Codable {
     let data: MarketDataModel?
 }
 
 struct MarketDataModel: Codable {
-    let total_market_cap, total_volume, market_cap_percentage: [String: Double]
-    let market_cap_change_percentage_24h_usd: Double
+    
+    let totalMarketCap, totalVolume, marketCapPercentage: [String: Double]
+    let marketCapChangePercentage24HUsd: Double
+
+    enum CodingKeys: String, CodingKey {
+        case totalMarketCap =  "total_market_cap"
+        case totalVolume = "total_volume"
+        case marketCapPercentage = "market_cap_percentage"
+        case marketCapChangePercentage24HUsd = "market_cap_change_percentage_24h_usd"
+    }
     
     var marketCup: String {
         
-        if let item = total_market_cap.first(where: {$0.key == "usd"}) {
-            return "\(item.value)"
+        if let item = totalMarketCap.first(where: {$0.key == "usd"}) {
+            return "$" + item.value.formattedWithAbbreviations()
         }
         return ""
     }
     
     var volume: String {
-        if let item = total_volume.first(where: {$0.key == "usd"}){
-            return "\(item.value)"
+        if let item = totalVolume.first(where: {$0.key == "usd"}){
+            return "$" + item.value.formattedWithAbbreviations()
         }
         return ""
     }
     
     var btcDominance: String {
-        if let item = market_cap_percentage.first(where: { $0.key == "btc"}){
+        if let item = marketCapPercentage.first(where: { $0.key == "btc"}){
             return item.value.aspercentString()
         }
         return ""
