@@ -13,6 +13,7 @@ struct HomeStatsView: View {
     @Binding var showPortfolio: Bool
     
     var body: some View {
+        
         HStack {
             ForEach(vm.statistics) { stat in
                 StatisticsView(stat: stat)
@@ -25,7 +26,9 @@ struct HomeStatsView: View {
 
 struct HomeStatsView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeStatsView(showPortfolio: .constant(false))
-            .environmentObject(dev.homeVM)
+        ScrollView{
+            HomeStatsView(showPortfolio: .constant(false))
+                .environmentObject(dev.homeVM)
+        }
     }
 }

@@ -36,6 +36,11 @@ struct PortfolioView: View {
                     trailingNavBarButtons
                 }
             })
+            .onChange(of: vm.searchText) { newValue in
+                if newValue == "" {
+                    removeSelectedCrypto()
+                }
+            }
         }
     }
 }
@@ -54,13 +59,13 @@ extension PortfolioView {
     private var cryptoLogoStack: some View {
         ScrollView(.horizontal, showsIndicators: false,content:  {
             LazyHStack(spacing: 10) {
-                ForEach(vm.allCrypto) { crypto in
+                ForEach(vm.searchText.isEmpty ? vm.portfolioCrypto : vm.allCrypto) { crypto in
                     CryptoLogoView(crypto: crypto)
                         .frame(width: 75)
                         .padding(4)
                         .onTapGesture {
                             withAnimation(.easeIn){
-                                selectedCrypto = crypto
+                                updateSelectedCrypto(crypto: crypto)
                             }
                         }
                         .background(
@@ -72,6 +77,18 @@ extension PortfolioView {
             .frame(height: 125)
             .padding(.leading)
         })
+    }
+    
+    private func updateSelectedCrypto (crypto: CryptoModel) {
+        
+        selectedCrypto = crypto
+        if let portfolioCryptos = vm.portfolioCrypto.first(where: {$0.id == crypto.id}),
+           let amount = portfolioCryptos.currentHoldings {
+            cryptoAmount = "\(amount)"
+        }else{
+            cryptoAmount = ""
+        }
+        
     }
     
     private func getCurrentValue () -> Double {
@@ -115,7 +132,7 @@ extension PortfolioView {
                 .opacity(showSaveButton ? 1.0 : 0.0)
             Button(action: {
                 
-                
+                saveButtonPressed()
                 
             }, label: {
                 Text("Save".uppercased())
@@ -129,7 +146,35 @@ extension PortfolioView {
     }
     
     private func saveButtonPressed () {
+        guard
+            let crypto = selectedCrypto,
+            let amount = Double(cryptoAmount)
+        else {return}
         
+        //Save to Portfolio
+        vm.updatePortfolio(crypto: crypto, amount: amount)
+        
+        //Show checkmark
+        withAnimation(.easeIn) {
+            showSaveButton = true
+            removeSelectedCrypto()
+        }
+        
+        //Hide keyboard
+        UIApplication.shared.endEditing()
+        
+        //Hide checkmark
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation(.easeOut) {
+                showSaveButton = false
+            }
+        }
+    }
+    
+    private func removeSelectedCrypto () {
+        selectedCrypto = nil
+        vm.searchText = ""
+        UIApplication.shared.endEditing()
     }
     
 }

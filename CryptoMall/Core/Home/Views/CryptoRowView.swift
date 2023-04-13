@@ -21,12 +21,15 @@ struct CryptoRowView: View {
             }
             rightColum
         }
-        .frame(width: UIScreen.main.bounds.width / 1.05, height: 100)
+        .frame(width: UIScreen.main.bounds.width / 1.04, height: 100)
         .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color(.systemGray5), lineWidth: 2)
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color(.systemGray5), lineWidth: 1)
         )
         .font(.subheadline)
+        .background(
+            Color.theme.background.opacity(0.001)
+        )
     }
 }
 
