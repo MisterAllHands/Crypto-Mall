@@ -1,17 +1,20 @@
+////
+////  CryptoRowView.swift
+////  CryptoMall
+////
+////  Created by TTGMOTSF on 07/04/2023.
+////
 //
-//  CryptoRowView.swift
-//  CryptoMall
-//
-//  Created by TTGMOTSF on 07/04/2023.
-//
-
 import SwiftUI
+import SwiftUI_Shimmer
+
 
 struct CryptoRowView: View {
-    
+
+    @EnvironmentObject private var vm: HomeViewModel
     let crypto: CryptoModel
     let showHoldingColumn: Bool
-    
+
     var body: some View {
         HStack(spacing: 0) {
             leftColum
@@ -44,7 +47,7 @@ struct CryptoRowView_Previews: PreviewProvider {
 //MARK: - Colums
 
 extension CryptoRowView {
-    
+
     private var leftColum: some View {
         HStack(spacing: 0) {
             Text("\(crypto.rank)")
@@ -53,7 +56,7 @@ extension CryptoRowView {
                 .frame(minWidth: 30)
             CryptoImageView(crypto: crypto)
                 .frame(width: 40, height: 40)
-                
+
             Text("\(crypto.symbol.uppercased())")
                 .font(.headline)
                 .fontWeight(.semibold)
@@ -61,7 +64,7 @@ extension CryptoRowView {
                 .foregroundColor(Color.theme.accentColor)
         }
     }
-    
+
     private var centerColum: some View {
         VStack(alignment: .trailing, spacing: 5){
             Text(crypto.currentHoldingsvalue.asCurrencyWith2Decimals())
@@ -70,7 +73,7 @@ extension CryptoRowView {
         }
         .foregroundColor(Color.theme.accentColor)
     }
-    
+
     private var rightColum: some View {
         VStack(alignment: .trailing , spacing: 5) {
             Text(crypto.currentPrice.asCurrencyWith6Decimals())

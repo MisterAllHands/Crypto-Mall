@@ -111,7 +111,6 @@ struct CryptoModel: Identifiable, Codable {
     }
 }
 
-// MARK: - SparklineIn7D
 struct SparklineIn7D: Codable {
     let price: [Double]?
 }

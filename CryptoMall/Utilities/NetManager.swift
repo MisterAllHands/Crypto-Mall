@@ -14,7 +14,6 @@ class NetManager {
     enum NetworkingError: LocalizedError {
         case PoorURLResponse
         case Unknown
-        
         var errorDescription: String? {
             switch self {
             case .PoorURLResponse: return "[♨️] Poor URL Response..."
@@ -23,11 +22,10 @@ class NetManager {
         }
     }
     
+    //Downloading Data with Combine
     static func download(url: URL) -> AnyPublisher<Data, Error> {
          return URLSession.shared.dataTaskPublisher(for: url)
-            .subscribe(on: DispatchQueue.global(qos: .default))
             .tryMap({ try handleURLResponse(output: $0)})
-            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     
@@ -39,6 +37,7 @@ class NetManager {
         return output.data
     }
     
+    //Handling Errors in case they occur
     static func handleCompletion(completion: Subscribers.Completion<Error>) {
         switch completion {
         case .finished:

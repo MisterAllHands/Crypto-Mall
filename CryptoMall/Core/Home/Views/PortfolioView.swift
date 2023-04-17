@@ -36,6 +36,9 @@ struct PortfolioView: View {
                     trailingNavBarButtons
                 }
             })
+            .background(
+                Color.theme.background
+            )
             .onChange(of: vm.searchText) { newValue in
                 if newValue == "" {
                     removeSelectedCrypto()

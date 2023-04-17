@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SwiftUI_Shimmer
+
 
 struct HomeStatsView: View {
     

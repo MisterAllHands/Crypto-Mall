@@ -25,6 +25,7 @@ class CrytpoDataService {
         }
         coinSubscription = NetManager.download(url: url)
             .decode(type: [CryptoModel].self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: NetManager.handleCompletion, receiveValue: {[weak self] (returnedCrypto) in
                 self?.allCrypto = returnedCrypto
                 self?.coinSubscription?.cancel()

@@ -6,19 +6,30 @@
 //
 
 import SwiftUI
+import SwiftUI_Shimmer
+import AVKit
 
 struct HomeView: View {
+    
+    @State var selectedTab = "Market"
+    @State private var showMenu = false
     
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false // <- Animates to the right
     @State private var showPortfolioView: Bool = false // <- shows a new sheet
     @State private var selectCrypto:CryptoModel? = nil
+    @State private var showSettingsView: Bool = false
+    @State private var shouldStopShimmering: Bool = false
     @State private var showDetailView: Bool = false
+    @State private var isRefreshing = false
+    @State private var refreshTimer: Timer?
+    
     
     var body: some View {
             ZStack {
                 Color.theme.background
                     .ignoresSafeArea()
+                
                     .sheet(isPresented: $showPortfolioView) {
                         PortfolioView()
                             .environmentObject(vm)
@@ -26,21 +37,30 @@ struct HomeView: View {
                 VStack(spacing: 15) {
                     homeHeader
                     SearchbarView(searchText: $vm.searchText)
-
                     HomeStatsView(showPortfolio: $showPortfolio)
-                    
+                        .redacted(reason: isRefreshing ? .placeholder : [])
+                        .shimmering(active: isRefreshing ? true : false)
                     columHeadings
-        
+                    
                     if !showPortfolio {
-                         allCryptoList
+                        allCryptoList
                             .transition(.move(edge: .leading))
                     }
                     
                     if showPortfolio {
-                        portfolioList
-                            .transition(.move(edge: .trailing))
+                        ZStack(alignment: .top) {
+                            if vm.portfolioCrypto.isEmpty && vm.searchText.isEmpty{
+                                portfolioEmptyList
+                            }else{
+                                portfolioList
+                            }
+                        }
+                        .transition(.move(edge: .trailing))
                     }
                     Spacer(minLength: 0)
+                }
+                .sheet(isPresented: $showSettingsView) {
+                    SettingsView()
                 }
             }
             .background(
@@ -53,10 +73,11 @@ struct HomeView: View {
 }
 
 struct HomeView_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationView {
             HomeView()
-            .navigationBarHidden(true)
+                .navigationBarHidden(true)
         }
         .environmentObject(dev.homeVM)
     }
@@ -68,11 +89,14 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView {
     private var homeHeader: some View {
         HStack{
-            CircleButtonView(buttonName: showPortfolio ? "plus" : "info")
+            CircleButtonView(buttonName: showPortfolio ? "plus" : "hamburgerMenu")
                 .animation(.none)
                 .onTapGesture {
                     if showPortfolio {
                         showPortfolioView.toggle()
+                    }else{
+//                        showSettingsView.toggle()
+                        showMenu.toggle()
                     }
                 }
                 .background(
@@ -94,25 +118,65 @@ extension HomeView {
                 }
         }
         .padding(.horizontal)
-
     }
     
     private var allCryptoList: some View {
-            List {
-                ForEach(vm.allCrypto) { crypto in
-                    CryptoRowView(crypto: crypto, showHoldingColumn: false)
-                        .listRowInsets(.init(top: 10, leading: 10, bottom: 5, trailing: 10))
-                        .onTapGesture {
-                            segue(crypto: crypto)
-                        }
+        List {
+            ForEach(vm.allCrypto) { crypto in
+                CryptoRowView(crypto: crypto, showHoldingColumn: false)
+                    .listRowInsets(.init(top: 10, leading: 10, bottom: 5, trailing: 10))
+                    .onTapGesture {
+                        segue(crypto: crypto)
+                    }
+                    .listRowBackground(Color.theme.background)
+                    .redacted(reason: isRefreshing ? .placeholder : [])
+                    .shimmering(active: isRefreshing ? true : false)
+            }
+        }
+        .listStyle(.plain)
+        .refreshable {
+            isRefreshing = true
+            Task {
+                await MainActor.run {
+                    vm.isLoading = true
                 }
             }
-            .listStyle(.plain)
-            .refreshable {
-                vm.reloadData()
+            SoundManager.instance.playSound(sound: .PullSound)
+            await Task.sleep(1_000_000_000) // 1 second delay
+            await vm.reloadData()
+            refreshTimer?.fire()
+            refreshTimer = Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { _ in
+                SoundManager.instance.playSound(sound: .RefreshSound)
+                Task {
+                    await MainActor.run {
+                        vm.isLoading = false
+                    }
+                }
+            })
+        }
+        .onChange(of: isRefreshing) { newValue in
+            if !newValue{
+                refreshTimer?.invalidate()
             }
+        }
     }
-        
+    
+    private var portfolioEmptyList: some View {
+        VStack(spacing: 5) {
+            Text("You don't have any coins yet. Click + button to get started!")
+                .font(.callout)
+                .foregroundColor(Color.theme.accentColor)
+                .fontWeight(.medium)
+                .multilineTextAlignment(.center)
+                .padding(50)
+            
+            Image(systemName: "bitcoinsign.circle.fill")
+                .resizable()
+                .frame(width: 80, height: 80)
+                .foregroundColor(Color.orange)
+        }
+    }
+    
     private var portfolioList: some View {
         List {
             ForEach(vm.portfolioCrypto) { crypto in
@@ -121,6 +185,7 @@ extension HomeView {
                     .onTapGesture {
                         segue(crypto: crypto)
                     }
+                    .listRowBackground(Color.theme.background)
             }
         }
         .listStyle(.plain)
@@ -176,10 +241,13 @@ extension HomeView {
                 }
             }
             .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
-
+            
             Button(action: {
                 withAnimation(.linear(duration: 0.8)) {
-                    vm.reloadData()
+                    vm.isLoading = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                        vm.isLoading = false
+                    }
                 }
             },label: {
                 Image(systemName: "goforward")

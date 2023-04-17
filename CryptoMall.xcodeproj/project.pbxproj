@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C45D20F99B7D5BFBED18CF8 /* Pods_CryptoMall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601A7C035514DB88DDE1402B /* Pods_CryptoMall.framework */; };
 		ED5B276C29E564E500451559 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B276B29E564E500451559 /* PortfolioDataService.swift */; };
 		ED5B276E29E5B98400451559 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B276D29E5B98400451559 /* HapticManager.swift */; };
 		ED5B277029E5FB1700451559 /* CustomRefreshVie.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B276F29E5FB1700451559 /* CustomRefreshVie.swift */; };
 		ED87E56429DED63400712E98 /* CryptoMallApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87E56329DED63400712E98 /* CryptoMallApp.swift */; };
-		ED87E56629DED63400712E98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87E56529DED63400712E98 /* ContentView.swift */; };
 		ED87E56B29DED63700712E98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED87E56A29DED63700712E98 /* Preview Assets.xcassets */; };
 		ED87E57229DED6FB00712E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED87E57129DED6FB00712E98 /* Assets.xcassets */; };
 		ED87E58229DF26CF00712E98 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87E58129DF26CF00712E98 /* Color.swift */; };
@@ -45,16 +45,31 @@
 		ED9B43D929E80B6D00E5D645 /* CryptoDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B43D829E80B6D00E5D645 /* CryptoDetailService.swift */; };
 		ED9B43DB29E82F1800E5D645 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B43DA29E82F1800E5D645 /* ChartView.swift */; };
 		ED9B43DD29E837E700E5D645 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B43DC29E837E700E5D645 /* Date.swift */; };
+		ED9B43DF29E8506400E5D645 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B43DE29E8506400E5D645 /* String.swift */; };
+		ED9B43E329E867C500E5D645 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B43E229E867C500E5D645 /* SettingsView.swift */; };
+		ED9B43F129E93D2E00E5D645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9B43F029E93D2E00E5D645 /* LaunchScreen.storyboard */; };
+		ED9B43F329E93F1200E5D645 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B43F229E93F1200E5D645 /* LaunchView.swift */; };
+		EDA63DC929EC0A290023F1BA /* RefreshSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDA63DC729EC0A280023F1BA /* RefreshSound.mp3 */; };
+		EDA63DCA29EC0A290023F1BA /* PullSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDA63DC829EC0A290023F1BA /* PullSound.mp3 */; };
+		EDA63DCD29EC394F0023F1BA /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DCC29EC394F0023F1BA /* SoundManager.swift */; };
+		EDA63DCF29ECA6CD0023F1BA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DCE29ECA6CD0023F1BA /* MainView.swift */; };
+		EDA63DD229ECAAB30023F1BA /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DD129ECAAB30023F1BA /* TabButton.swift */; };
+		EDA63DD829ECADD30023F1BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DD729ECADD30023F1BA /* ContentView.swift */; };
+		EDA63DDB29ECAF750023F1BA /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DDA29ECAF750023F1BA /* CustomCorners.swift */; };
+		EDA63DDD29EDAD0D0023F1BA /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DDC29EDAD0C0023F1BA /* SideMenuView.swift */; };
+		EDA63DDF29EDADEB0023F1BA /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DDE29EDADEB0023F1BA /* MainTabView.swift */; };
 		EDD2E73F29E44BDF001A912A /* PortfolioDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDD2E73D29E44BDF001A912A /* PortfolioDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		601A7C035514DB88DDE1402B /* Pods_CryptoMall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CA3DE5678D5FE9288E0CD50 /* Pods-CryptoMall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMall.debug.xcconfig"; path = "Target Support Files/Pods-CryptoMall/Pods-CryptoMall.debug.xcconfig"; sourceTree = "<group>"; };
+		BD9E8608EA6AC8B68B25D202 /* Pods-CryptoMall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMall.release.xcconfig"; path = "Target Support Files/Pods-CryptoMall/Pods-CryptoMall.release.xcconfig"; sourceTree = "<group>"; };
 		ED5B276B29E564E500451559 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
 		ED5B276D29E5B98400451559 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		ED5B276F29E5FB1700451559 /* CustomRefreshVie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRefreshVie.swift; sourceTree = "<group>"; };
 		ED87E56029DED63400712E98 /* CryptoMall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED87E56329DED63400712E98 /* CryptoMallApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMallApp.swift; sourceTree = "<group>"; };
-		ED87E56529DED63400712E98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED87E56A29DED63700712E98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED87E57129DED6FB00712E98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Resources/Assets.xcassets; sourceTree = "<group>"; };
 		ED87E58129DF26CF00712E98 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -88,6 +103,19 @@
 		ED9B43D829E80B6D00E5D645 /* CryptoDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailService.swift; sourceTree = "<group>"; };
 		ED9B43DA29E82F1800E5D645 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		ED9B43DC29E837E700E5D645 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		ED9B43DE29E8506400E5D645 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		ED9B43E229E867C500E5D645 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ED9B43F029E93D2E00E5D645 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED9B43F229E93F1200E5D645 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		EDA63DC729EC0A280023F1BA /* RefreshSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RefreshSound.mp3; sourceTree = "<group>"; };
+		EDA63DC829EC0A290023F1BA /* PullSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PullSound.mp3; sourceTree = "<group>"; };
+		EDA63DCC29EC394F0023F1BA /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		EDA63DCE29ECA6CD0023F1BA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EDA63DD129ECAAB30023F1BA /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		EDA63DD729ECADD30023F1BA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "Preview Content/ContentView.swift"; sourceTree = "<group>"; };
+		EDA63DDA29ECAF750023F1BA /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		EDA63DDC29EDAD0C0023F1BA /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		EDA63DDE29EDADEB0023F1BA /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		EDD2E73E29E44BDF001A912A /* PortfolioDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,17 +124,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C45D20F99B7D5BFBED18CF8 /* Pods_CryptoMall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A40B797604A18B4A4652A175 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				601A7C035514DB88DDE1402B /* Pods_CryptoMall.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFED665629713970B9360F6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CA3DE5678D5FE9288E0CD50 /* Pods-CryptoMall.debug.xcconfig */,
+				BD9E8608EA6AC8B68B25D202 /* Pods-CryptoMall.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED87E55729DED63400712E98 = {
 			isa = PBXGroup;
 			children = (
 				ED87E56229DED63400712E98 /* CryptoMall */,
 				ED87E56129DED63400712E98 /* Products */,
+				CFED665629713970B9360F6C /* Pods */,
+				A40B797604A18B4A4652A175 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,13 +170,14 @@
 			isa = PBXGroup;
 			children = (
 				ED87E56329DED63400712E98 /* CryptoMallApp.swift */,
-				ED87E5A329E0C55D00712E98 /* Reusables */,
+				ED87E5A329E0C55D00712E98 /* Utilities */,
 				ED87E5A029E03E6C00712E98 /* Services */,
 				ED87E59529E002F600712E98 /* Models */,
 				ED87E58329DF292600712E98 /* Core */,
 				ED87E57629DF172200712E98 /* Extensions */,
-				ED87E56529DED63400712E98 /* ContentView.swift */,
+				EDA63DCB29EC0B400023F1BA /* Sounds */,
 				ED87E57129DED6FB00712E98 /* Assets.xcassets */,
+				EDA63DD729ECADD30023F1BA /* ContentView.swift */,
 				ED87E56929DED63700712E98 /* Preview Content */,
 			);
 			path = CryptoMall;
@@ -150,6 +199,7 @@
 				ED87E59C29E01F2000712E98 /* Double.swift */,
 				ED87E5B129E212C700712E98 /* UIAplication.swift */,
 				ED9B43DC29E837E700E5D645 /* Date.swift */,
+				ED9B43DE29E8506400E5D645 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -157,9 +207,11 @@
 		ED87E58329DF292600712E98 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				ED87E58929DF2AA300712E98 /* Components */,
+				ED9B43EE29E93CFE00E5D645 /* Launch */,
 				ED87E58429DF293300712E98 /* Home */,
 				ED9B43CF29E7FCB700E5D645 /* Detail */,
+				ED9B43E029E867AF00E5D645 /* Settings */,
+				ED87E58929DF2AA300712E98 /* Components */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -181,6 +233,9 @@
 				ED87E59829E0166B00712E98 /* CryptoRowView.swift */,
 				ED87E5C029E3108500712E98 /* PortfolioView.swift */,
 				ED5B276F29E5FB1700451559 /* CustomRefreshVie.swift */,
+				EDA63DCE29ECA6CD0023F1BA /* MainView.swift */,
+				EDA63DDC29EDAD0C0023F1BA /* SideMenuView.swift */,
+				EDA63DDE29EDADEB0023F1BA /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +251,8 @@
 		ED87E58929DF2AA300712E98 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EDA63DD929ECAF620023F1BA /* CustomCorners */,
+				EDA63DD029ECAAA30023F1BA /* TabButton */,
 				ED87E5C629E33D5900712E98 /* Buttons */,
 				ED87E5BD29E2CD1600712E98 /* SearchBar */,
 				ED87E5A629E0CBB800712E98 /* CoinImage */,
@@ -231,20 +288,21 @@
 				ED87E5A129E03E9900712E98 /* CryptoDataSeervices.swift */,
 				ED87E5BB29E2C54A00712E98 /* MarketDataService.swift */,
 				ED87E5A929E1887B00712E98 /* CryptoImageService.swift */,
-				ED5B276B29E564E500451559 /* PortfolioDataService.swift */,
 				ED9B43D829E80B6D00E5D645 /* CryptoDetailService.swift */,
+				ED5B276B29E564E500451559 /* PortfolioDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		ED87E5A329E0C55D00712E98 /* Reusables */ = {
+		ED87E5A329E0C55D00712E98 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				ED87E5A429E0C57D00712E98 /* NetManager.swift */,
 				ED87E5AD29E1907800712E98 /* DataStorage.swift */,
 				ED5B276D29E5B98400451559 /* HapticManager.swift */,
+				EDA63DCC29EC394F0023F1BA /* SoundManager.swift */,
 			);
-			path = Reusables;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		ED87E5A629E0CBB800712E98 /* CoinImage */ = {
@@ -300,6 +358,64 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		ED9B43E029E867AF00E5D645 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				ED9B43E129E867B600E5D645 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		ED9B43E129E867B600E5D645 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED9B43E229E867C500E5D645 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED9B43EE29E93CFE00E5D645 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				ED9B43EF29E93D0A00E5D645 /* Views */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		ED9B43EF29E93D0A00E5D645 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED9B43F029E93D2E00E5D645 /* LaunchScreen.storyboard */,
+				ED9B43F229E93F1200E5D645 /* LaunchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EDA63DCB29EC0B400023F1BA /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EDA63DC829EC0A290023F1BA /* PullSound.mp3 */,
+				EDA63DC729EC0A280023F1BA /* RefreshSound.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		EDA63DD029ECAAA30023F1BA /* TabButton */ = {
+			isa = PBXGroup;
+			children = (
+				EDA63DD129ECAAB30023F1BA /* TabButton.swift */,
+			);
+			path = TabButton;
+			sourceTree = "<group>";
+		};
+		EDA63DD929ECAF620023F1BA /* CustomCorners */ = {
+			isa = PBXGroup;
+			children = (
+				EDA63DDA29ECAF750023F1BA /* CustomCorners.swift */,
+			);
+			path = CustomCorners;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,9 +423,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED87E56E29DED63700712E98 /* Build configuration list for PBXNativeTarget "CryptoMall" */;
 			buildPhases = (
+				70956C7230FA40A09E3BB8ED /* [CP] Check Pods Manifest.lock */,
 				ED87E55C29DED63400712E98 /* Sources */,
 				ED87E55D29DED63400712E98 /* Frameworks */,
 				ED87E55E29DED63400712E98 /* Resources */,
+				0ADB83F476E753E1F6BC0CBF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -358,32 +476,84 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA63DCA29EC0A290023F1BA /* PullSound.mp3 in Resources */,
+				ED9B43F129E93D2E00E5D645 /* LaunchScreen.storyboard in Resources */,
 				ED87E56B29DED63700712E98 /* Preview Assets.xcassets in Resources */,
+				EDA63DC929EC0A290023F1BA /* RefreshSound.mp3 in Resources */,
 				ED87E57229DED6FB00712E98 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0ADB83F476E753E1F6BC0CBF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoMall/Pods-CryptoMall-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoMall/Pods-CryptoMall-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CryptoMall/Pods-CryptoMall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70956C7230FA40A09E3BB8ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoMall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED87E55C29DED63400712E98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED87E56629DED63400712E98 /* ContentView.swift in Sources */,
+				ED9B43DF29E8506400E5D645 /* String.swift in Sources */,
+				ED9B43F329E93F1200E5D645 /* LaunchView.swift in Sources */,
 				ED87E58829DF296E00712E98 /* HomeView.swift in Sources */,
 				ED87E5A229E03E9900712E98 /* CryptoDataSeervices.swift in Sources */,
 				ED87E5AE29E1907800712E98 /* DataStorage.swift in Sources */,
+				EDA63DDB29ECAF750023F1BA /* CustomCorners.swift in Sources */,
 				ED87E56429DED63400712E98 /* CryptoMallApp.swift in Sources */,
 				ED87E59729E0030900712E98 /* CryptoModel.swift in Sources */,
 				ED87E5BA29E2C11800712E98 /* MarketDataModel.swift in Sources */,
 				ED87E59229DFFE9D00712E98 /* CircleButtonAnimationView.swift in Sources */,
+				EDA63DCD29EC394F0023F1BA /* SoundManager.swift in Sources */,
 				ED87E5AA29E1887B00712E98 /* CryptoImageService.swift in Sources */,
+				EDA63DDD29EDAD0D0023F1BA /* SideMenuView.swift in Sources */,
 				ED87E59B29E016D500712E98 /* PreviewProvider.swift in Sources */,
 				ED87E5AC29E18A7800712E98 /* CoinImageViewModel.swift in Sources */,
+				ED9B43E329E867C500E5D645 /* SettingsView.swift in Sources */,
 				ED9B43DD29E837E700E5D645 /* Date.swift in Sources */,
 				ED87E5B629E2B97000712E98 /* StatisticsView.swift in Sources */,
 				ED87E59929E0166B00712E98 /* CryptoRowView.swift in Sources */,
+				EDA63DCF29ECA6CD0023F1BA /* MainView.swift in Sources */,
+				EDA63DDF29EDADEB0023F1BA /* MainTabView.swift in Sources */,
 				ED87E59F29E033BB00712E98 /* HomeViewModel.swift in Sources */,
 				ED87E5B229E212C700712E98 /* UIAplication.swift in Sources */,
 				ED87E58C29DF2AC800712E98 /* CircleButtonView.swift in Sources */,
@@ -393,6 +563,8 @@
 				ED9B43D729E808AC00E5D645 /* CryptoDetailModel.swift in Sources */,
 				ED87E5C329E337FA00712E98 /* XmarkButton.swift in Sources */,
 				ED87E5BC29E2C54A00712E98 /* MarketDataService.swift in Sources */,
+				EDA63DD829ECADD30023F1BA /* ContentView.swift in Sources */,
+				EDA63DD229ECAAB30023F1BA /* TabButton.swift in Sources */,
 				ED87E59D29E01F2000712E98 /* Double.swift in Sources */,
 				ED9B43DB29E82F1800E5D645 /* ChartView.swift in Sources */,
 				ED9B43D929E80B6D00E5D645 /* CryptoDetailService.swift in Sources */,
@@ -529,6 +701,7 @@
 		};
 		ED87E56F29DED63700712E98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CA3DE5678D5FE9288E0CD50 /* Pods-CryptoMall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -541,7 +714,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto-Space";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -560,6 +733,7 @@
 		};
 		ED87E57029DED63700712E98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD9E8608EA6AC8B68B25D202 /* Pods-CryptoMall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -572,7 +746,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto-Space";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

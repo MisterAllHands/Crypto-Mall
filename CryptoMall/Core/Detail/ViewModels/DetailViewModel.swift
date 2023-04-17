@@ -13,6 +13,10 @@ class DetailViewModel: ObservableObject{
     @Published var overViewStatistics: [Statistics] = []
     @Published var additionalStatistics: [Statistics] = []
     @Published var crypto: CryptoModel
+    @Published var cryptoDescription: String? = nil
+    @Published var webURL: String? = nil
+    @Published var redditURL: String? = nil
+
     
     private let cryptoDetailService: CryptoDetailDataService
     private var cancellables = Set<AnyCancellable>()
@@ -32,8 +36,15 @@ class DetailViewModel: ObservableObject{
                 self?.additionalStatistics = returnedArrays.additional
             }
             .store(in: &cancellables)
+        
+        cryptoDetailService.$cryptoDetails
+            .sink {[weak self](returnedCryptoDetails) in
+                self?.cryptoDescription = returnedCryptoDetails?.readableDescription
+                self?.webURL = returnedCryptoDetails?.links?.homepage?.first
+                self?.redditURL = returnedCryptoDetails?.links?.subredditURL
+            }
+            .store(in: &cancellables)
     }
-    
     
     
     //MARK: - Overview & Additional View

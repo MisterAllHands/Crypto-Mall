@@ -69,17 +69,25 @@ class HomeViewModel: ObservableObject {
     func updatePortfolio (crypto: CryptoModel, amount: Double) {
         portfolioDataService.updatePortfolio(crypto: crypto, amount: amount)
     }
-    
-    func reloadData () {
-        isLoading = true
-        cryptoDataService.getCrypto()
-        marketDataService.getMarketData()
-        HapticManager.notification(type: .success)
+        
+    func reloadData () async {
+        self.isLoading = true // update isLoading on the main thread
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let self = self else{return}
+            // perform expensive data loading on a background thread
+            cryptoDataService.getCrypto()
+            marketDataService.getMarketData()
+            DispatchQueue.main.async {
+                // update state variable isLoading back on the main thread
+                self.isLoading = false
+                HapticManager.notification(type: .success)
+            }
+        }
     }
     
     //MARK - Retreiving market data
     
-    private func mapMarketData (marketDataModel: MarketDataModel?, portfolioCryptos: [CryptoModel]) -> [Statistics] {
+    private func mapMarketData (marketDataModel: MarketDataModel?, portfolioCryptos: [CryptoModel]) -> [Statistics]{
         var stats: [Statistics] = []
         guard let data = marketDataModel else {
             return stats
@@ -104,7 +112,7 @@ class HomeViewModel: ObservableObject {
                 }
                 .reduce(0, +)
         
-        let percentageChange = ((portfolioValue - previousValue) / previousValue) * 100
+        let percentageChange = ((portfolioValue - previousValue) / previousValue)
         
         
         let portfolio = Statistics(

@@ -34,20 +34,17 @@ class DataStorage {
     }
     
     func getImage (imageName: String, storageName: String) -> UIImage? {
-        
         guard
             let url = getURLForImage(imageName: imageName, storageName: storageName),
             FileManager.default.fileExists(atPath: url.path) else {
             return nil
         }
         return UIImage(contentsOfFile: url.path )
-        
     }
     
     //Creating storage if there is not any to save images
     
     private func createStorageIfNeeded (storagename: String) {
-        
         guard let url = getURLForStorage(name: storagename) else {return}
         
         if !FileManager.default.fileExists(atPath: url.path) {
@@ -67,7 +64,6 @@ class DataStorage {
     }
     
     private func getURLForImage (imageName: String, storageName: String) -> URL? {
-        
         guard let storageURL = getURLForStorage(name: storageName) else {
             return nil
         }

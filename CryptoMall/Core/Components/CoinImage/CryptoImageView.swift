@@ -16,7 +16,6 @@ struct CryptoImageView: View {
         _vm = StateObject(wrappedValue: CryptoImageViewModel(crypto: crypto))
     }
     
-    
     var body: some View {
         ZStack {
             if let image = vm.image {
