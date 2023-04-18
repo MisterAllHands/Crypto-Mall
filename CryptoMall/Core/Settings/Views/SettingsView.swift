@@ -35,11 +35,6 @@ struct SettingsView: View {
             .font(.headline)
             .listStyle(GroupedListStyle())
             .navigationTitle("Settings")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    XmarkButton()
-                }
-            }
         }
     }
 }

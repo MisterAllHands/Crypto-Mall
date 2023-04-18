@@ -209,8 +209,10 @@
 			children = (
 				ED9B43EE29E93CFE00E5D645 /* Launch */,
 				ED87E58429DF293300712E98 /* Home */,
+				EDA63DE729EDDB820023F1BA /* SideMenu */,
 				ED9B43CF29E7FCB700E5D645 /* Detail */,
 				ED9B43E029E867AF00E5D645 /* Settings */,
+				EDA63DE629EDDB630023F1BA /* Login */,
 				ED87E58929DF2AA300712E98 /* Components */,
 			);
 			path = Core;
@@ -233,9 +235,6 @@
 				ED87E59829E0166B00712E98 /* CryptoRowView.swift */,
 				ED87E5C029E3108500712E98 /* PortfolioView.swift */,
 				ED5B276F29E5FB1700451559 /* CustomRefreshVie.swift */,
-				EDA63DCE29ECA6CD0023F1BA /* MainView.swift */,
-				EDA63DDC29EDAD0C0023F1BA /* SideMenuView.swift */,
-				EDA63DDE29EDADEB0023F1BA /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,6 +413,23 @@
 				EDA63DDA29ECAF750023F1BA /* CustomCorners.swift */,
 			);
 			path = CustomCorners;
+			sourceTree = "<group>";
+		};
+		EDA63DE629EDDB630023F1BA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EDA63DE729EDDB820023F1BA /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EDA63DCE29ECA6CD0023F1BA /* MainView.swift */,
+				EDA63DDC29EDAD0C0023F1BA /* SideMenuView.swift */,
+				EDA63DDE29EDADEB0023F1BA /* MainTabView.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

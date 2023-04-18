@@ -51,5 +51,6 @@ struct TabButton_Previews: PreviewProvider {
     
     static var previews: some View {
         ContentView()
+            .environmentObject(dev.homeVM)
     }
 }

@@ -11,9 +11,9 @@ import AVKit
 
 struct HomeView: View {
     
-    @State var selectedTab = "Market"
-    @State private var showMenu = false
-    
+    @State var selectedTab = "HomeView"
+    @State var showMenu: Bool = false
+        
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false // <- Animates to the right
     @State private var showPortfolioView: Bool = false // <- shows a new sheet
@@ -26,27 +26,33 @@ struct HomeView: View {
     
     
     var body: some View {
+            
             ZStack {
                 Color.theme.background
                     .ignoresSafeArea()
-                
+
                     .sheet(isPresented: $showPortfolioView) {
                         PortfolioView()
                             .environmentObject(vm)
                     }
+
                 VStack(spacing: 15) {
+
                     homeHeader
+
                     SearchbarView(searchText: $vm.searchText)
+
                     HomeStatsView(showPortfolio: $showPortfolio)
-                        .redacted(reason: isRefreshing ? .placeholder : [])
-                        .shimmering(active: isRefreshing ? true : false)
+                        .redacted(reason: vm.isLoading ? .placeholder : [])
+                        .shimmering(active: vm.isLoading ? true : false)
+
                     columHeadings
-                    
+
                     if !showPortfolio {
                         allCryptoList
                             .transition(.move(edge: .leading))
                     }
-                    
+
                     if showPortfolio {
                         ZStack(alignment: .top) {
                             if vm.portfolioCrypto.isEmpty && vm.searchText.isEmpty{
@@ -59,9 +65,10 @@ struct HomeView: View {
                     }
                     Spacer(minLength: 0)
                 }
-                .sheet(isPresented: $showSettingsView) {
-                    SettingsView()
-                }
+//                .sheet(isPresented: $showSettingsView) {
+//                    SettingsView()
+//                }
+
             }
             .background(
                 NavigationLink(
@@ -76,13 +83,12 @@ struct HomeView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            HomeView()
+           ContentView()
                 .navigationBarHidden(true)
         }
         .environmentObject(dev.homeVM)
     }
 }
-
 
 //MARK: - HomeHeader
 
@@ -95,8 +101,8 @@ extension HomeView {
                     if showPortfolio {
                         showPortfolioView.toggle()
                     }else{
-//                        showSettingsView.toggle()
                         showMenu.toggle()
+                        print("ting")
                     }
                 }
                 .background(
@@ -129,8 +135,8 @@ extension HomeView {
                         segue(crypto: crypto)
                     }
                     .listRowBackground(Color.theme.background)
-                    .redacted(reason: isRefreshing ? .placeholder : [])
-                    .shimmering(active: isRefreshing ? true : false)
+                    .redacted(reason: vm.isLoading ? .placeholder : [])
+                    .shimmering(active: vm.isLoading ? true : false)
             }
         }
         .listStyle(.plain)

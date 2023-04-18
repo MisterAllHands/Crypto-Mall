@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct MainTabView: View {
     
     @Binding var selectedTab: String
@@ -20,7 +21,7 @@ struct MainTabView: View {
         TabView(selection: $selectedTab) {
             HomeView()
                 .tag("HomeView")
-            Settings()
+            SettingsView()
                 .tag("Settings")
             PrivacyPolicy()
                 .tag("PrivacyPolicy")
@@ -35,34 +36,12 @@ struct MainTabView: View {
 struct TabView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(dev.homeVM)
     }
 }
 
-struct Market: View{
-    
-    var body: some View{
-        NavigationView {
-            Text("Market")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundColor(.primary)
-                .navigationTitle("Market")
-        }
-    }
-}
 
-struct Settings: View{
-    
-    var body: some View{
-        NavigationView {
-            Text("Settings")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundColor(.primary)
-                .navigationTitle("Settings")
-        }
-    }
-}
+
 struct PrivacyPolicy: View{
     
     var body: some View{
@@ -75,6 +54,7 @@ struct PrivacyPolicy: View{
         }
     }
 }
+
 struct About: View{
     
     var body: some View{
@@ -87,6 +67,7 @@ struct About: View{
         }
     }
 }
+
 struct Help: View{
     
     var body: some View{

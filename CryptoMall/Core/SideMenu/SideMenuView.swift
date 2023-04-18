@@ -41,7 +41,7 @@ struct SideMenuView: View {
             })
             
             //Tab views...
-            VStack(alignment: .leading,spacing: 10) {
+            VStack(alignment: .leading, spacing: 10) {
                 TabButton(image: "bitcoinsign.circle.fill", title: "Market", selectedTab: $selectedTab, animation: animation)
                 TabButton(image: "gear", title: "Settings", selectedTab: $selectedTab, animation: animation)
                 TabButton(image: "shield.lefthalf.filled", title: "Privacy Policy", selectedTab: $selectedTab, animation: animation)
@@ -71,5 +71,6 @@ struct SideMenuView: View {
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(dev.homeVM)
     }
 }

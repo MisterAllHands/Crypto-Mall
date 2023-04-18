@@ -8,34 +8,34 @@
 import SwiftUI
 
 struct MainView: View {
-    
+
     @State var selectedTab = "HomeView"
     @State private var showMenu = false
-    
+
     var body: some View {
         ZStack {
             Color.theme.menuColor
                 .ignoresSafeArea()
-            
+
             SideMenuView(selectedTab: $selectedTab)
-            
+
             ZStack {
-                
+
                 Color.theme.background
                     .opacity(0.5)
                     .cornerRadius(showMenu ? 15 : 0)
                     .offset(x: showMenu ? -25 : 0)
                     .shadow(color: Color.theme.accentColor.opacity(0.7), radius: 5, x: -5, y: 0)
                     .padding(.vertical, 30)
-                
+
                 Color.theme.background
                     .opacity(0.4)
                     .cornerRadius(showMenu ? 15 : 0)
                     .offset(x: showMenu ? -50 : 0)
                     .shadow(color: Color.theme.accentColor.opacity(0.7), radius: 5, x: -5, y: 0)
                     .padding(.vertical, 60)
-                
-                HomeView()
+
+                MainTabView(selectedTab: $selectedTab)
             }
             .scaleEffect(showMenu ? 0.84 : 1)
             .offset(x:showMenu ? getRect().width - 120 : 0)
@@ -43,6 +43,7 @@ struct MainView: View {
                 Button(action: {
                     withAnimation(.spring()){
                         showMenu.toggle()
+                        print("ting2 was pressed")
                     }
                 }, label: {
                     VStack(spacing: 5) {
@@ -75,8 +76,8 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
-            .environmentObject(HomeViewModel())
+        ContentView()
+            .environmentObject(dev.homeVM)
     }
 }
 
