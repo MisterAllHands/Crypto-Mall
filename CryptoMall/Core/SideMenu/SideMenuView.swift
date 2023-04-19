@@ -70,7 +70,7 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SideMenuView(selectedTab: .constant("HomeView"))
             .environmentObject(dev.homeVM)
     }
 }

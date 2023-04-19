@@ -70,13 +70,14 @@ class HomeViewModel: ObservableObject {
         portfolioDataService.updatePortfolio(crypto: crypto, amount: amount)
     }
         
+    @MainActor
     func reloadData () async {
         self.isLoading = true // update isLoading on the main thread
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let self = self else{return}
             // perform expensive data loading on a background thread
-            cryptoDataService.getCrypto()
-            marketDataService.getMarketData()
+            self.cryptoDataService.getCrypto()
+            self.marketDataService.getMarketData()
             DispatchQueue.main.async {
                 // update state variable isLoading back on the main thread
                 self.isLoading = false

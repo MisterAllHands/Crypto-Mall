@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SwiftUI_Shimmer
+import Shimmer
 import AVKit
 
 struct HomeView: View {
@@ -70,6 +70,8 @@ struct HomeView: View {
 //                }
 
             }
+//            .scaleEffect(showMenu ? 0.84 : 1)
+//            .offset(x:showMenu ? getRect().width - 120 : 0)
             .background(
                 NavigationLink(
                     destination: DetailLoadingView(crypto: $selectCrypto),
@@ -95,7 +97,7 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView {
     private var homeHeader: some View {
         HStack{
-            CircleButtonView(buttonName: showPortfolio ? "plus" : "hamburgerMenu")
+            CircleButtonView(buttonName: showPortfolio ? "plus" : "line.3.horizontal")
                 .animation(.none)
                 .onTapGesture {
                     if showPortfolio {

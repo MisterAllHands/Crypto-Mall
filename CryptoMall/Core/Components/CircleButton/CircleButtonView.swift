@@ -12,7 +12,7 @@ struct CircleButtonView: View {
     let buttonName: String
     
     var body: some View {
-        Image(buttonName)
+        Image(systemName: buttonName)
             .renderingMode(.template)
             .font(.headline)
             .foregroundColor(Color.theme.accentColor.opacity(1.2))
