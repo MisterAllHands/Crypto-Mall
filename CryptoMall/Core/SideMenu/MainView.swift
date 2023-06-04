@@ -9,30 +9,32 @@ import SwiftUI
 
 struct MainView: View {
 
-    @State var selectedTab = "HomeView"
+    @State var selectedTab = "Market"
     @State private var showMenu = false
+    let background = Backgroundlayer()
+    
 
     var body: some View {
         ZStack {
-            Color.theme.menuColor
-                .ignoresSafeArea()
+                background.mainViewGradient
+                    .ignoresSafeArea()
 
             SideMenuView(selectedTab: $selectedTab)
 
             ZStack {
 
-                Color.theme.background
+                background.aboutViewgradient
                     .opacity(0.5)
                     .cornerRadius(showMenu ? 15 : 0)
                     .offset(x: showMenu ? -25 : 0)
-                    .shadow(color: Color.theme.accentColor.opacity(0.7), radius: 5, x: -5, y: 0)
+                    .shadow(color: Color.white.opacity(0.7), radius: 5, x: -5, y: 0)
                     .padding(.vertical, 30)
 
-                Color.theme.background
+                background.aboutViewgradient
                     .opacity(0.4)
                     .cornerRadius(showMenu ? 15 : 0)
                     .offset(x: showMenu ? -50 : 0)
-                    .shadow(color: Color.theme.accentColor.opacity(0.7), radius: 5, x: -5, y: 0)
+                    .shadow(color: Color.white.opacity(0.7), radius: 5, x: -5, y: 0)
                     .padding(.vertical, 60)
 
                 MainTabView(selectedTab: $selectedTab)
@@ -43,22 +45,21 @@ struct MainView: View {
                 Button(action: {
                     withAnimation(.spring()){
                         showMenu.toggle()
-                        print("ting2 was pressed")
                     }
                 }, label: {
                     VStack(spacing: 5) {
                         Capsule()
                             .fill(showMenu ? Color.white : Color.clear )
-                            .frame(width: 30, height: 3)
+                            .frame(width: 35, height: 4)
                             .rotationEffect(.init(degrees: showMenu ? 35 : 0))
                             .offset(x: showMenu ? -3 : 0, y: showMenu ? -8 : 0)
                         VStack(spacing: 5) {
                             Capsule()
                                 .fill(showMenu ? Color.white : Color.clear )
-                                .frame(width: 30, height: 3)
+                                .frame(width: 35, height: 4)
                             Capsule()
                                 .fill(showMenu ? Color.white : Color.clear )
-                                .frame(width: 30, height: 3)
+                                .frame(width: 35, height: 4)
                                 .offset(y: showMenu ? -8 : 0)
                         }
                         .rotationEffect(.init(degrees: showMenu ? -40 : 0))
@@ -66,10 +67,13 @@ struct MainView: View {
                     }
                 })
                 .padding()
-                .padding([.leading,.vertical], 25)
-                .padding(.top, -10)
+                .padding([.leading], 17)
+                .padding(.top, 10)
                 , alignment: .topLeading
             )
+        }
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
 }

@@ -6,7 +6,7 @@
 ////
 //
 import SwiftUI
-import Shimmer
+import SwiftUI_Shimmer
 
 
 struct CryptoRowView: View {
@@ -14,6 +14,7 @@ struct CryptoRowView: View {
     @EnvironmentObject private var vm: HomeViewModel
     let crypto: CryptoModel
     let showHoldingColumn: Bool
+    private let backgroundLayer = Backgroundlayer()
 
     var body: some View {
         HStack(spacing: 0) {
@@ -25,13 +26,9 @@ struct CryptoRowView: View {
             rightColum
         }
         .frame(width: UIScreen.main.bounds.width / 1.04, height: 100)
-        .overlay(
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Color(.systemGray5), lineWidth: 1)
-        )
         .font(.subheadline)
         .background(
-            Color.theme.background.opacity(0.001)
+            .clear
         )
     }
 }
@@ -50,36 +47,39 @@ extension CryptoRowView {
 
     private var leftColum: some View {
         HStack(spacing: 0) {
-            Text("\(crypto.rank)")
-                .font(.caption)
-                .foregroundColor(Color.theme.secondaryText)
-                .frame(minWidth: 30)
             CryptoImageView(crypto: crypto)
-                .frame(width: 40, height: 40)
+                .frame(width: 35, height: 35)
 
-            Text("\(crypto.symbol.uppercased())")
-                .font(.headline)
-                .fontWeight(.semibold)
-                .padding(.leading, 6)
-                .foregroundColor(Color.theme.accentColor)
+            VStack(alignment: .leading) {
+                Text("\(crypto.name.uppercased())")
+                    .font(.custom("Kanit-SemiBold", size: 15))
+                Text("\(crypto.symbol.uppercased())")
+                    .font(.custom("Kanit-ExtraLight", size: 15))
+                .foregroundColor(Color.white)
+            }
+            .padding(.leading, 6)
         }
     }
 
     private var centerColum: some View {
         VStack(alignment: .trailing, spacing: 5){
             Text(crypto.currentHoldingsvalue.asCurrencyWith2Decimals())
-                .bold()
+                .font(.custom("Kanit-SemiBold", size: 17))
+                .lineLimit(1)
             Text((crypto.currentHoldings ?? 0).asNumberString())
+                .font(.custom("Kanit-ExtraLight", size: 13))
         }
-        .foregroundColor(Color.theme.accentColor)
+        .foregroundColor(Color.white)
     }
 
     private var rightColum: some View {
         VStack(alignment: .trailing , spacing: 5) {
             Text(crypto.currentPrice.asCurrencyWith6Decimals())
-                .bold()
-                .foregroundColor(Color.theme.accentColor)
+                .font(.custom("Kanit-SemiBold", size: 17))
+                .lineLimit(1)
+                .foregroundColor(Color.white)
             Text(crypto.priceChangePercentage24H?.aspercentString() ?? "")
+                .font(.custom("Kanit-ExtraLight", size: 13))
                 .foregroundColor(
                     (crypto.priceChangePercentage24H ?? 0) >= 0 ? Color.theme.green : Color.theme.red
                 )

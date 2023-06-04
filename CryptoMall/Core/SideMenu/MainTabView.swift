@@ -20,12 +20,12 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             HomeView()
-                .tag("HomeView")
+                .tag("Market")
             SettingsView()
                 .tag("Settings")
             PrivacyPolicy()
                 .tag("PrivacyPolicy")
-            About()
+            AboutView()
                 .tag("About")
             Help()
                 .tag("Help")

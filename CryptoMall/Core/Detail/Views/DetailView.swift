@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIX
 
 struct DetailLoadingView: View {
 
@@ -35,7 +36,6 @@ struct DetailView: View {
     
     init(crypto: CryptoModel) {
         _vm = StateObject(wrappedValue: DetailViewModel(crypto: crypto))
-         print("Initialising detail view for \(crypto.name)")
     }
     
     var body: some View {
@@ -82,13 +82,12 @@ struct DetailView_Previews: PreviewProvider {
 
 //MARK: - Extension
 
-
 extension DetailView{
     
     private var navigationBarTrailingItems: some View{
         HStack {
             Text(vm.crypto.symbol.uppercased())
-                .font(.headline)
+                .font(.custom("Kanit-ExtraLight", size: 17))
             .foregroundColor(Color.theme.secondaryText)
             
             CryptoImageView(crypto: vm.crypto)
@@ -98,7 +97,7 @@ extension DetailView{
     
     private var overViewTitle: some View{
         Text("Overview")
-            .font(.title)
+            .font(.custom("Kanit-SemiBold", size: 30))
             .bold()
             .foregroundColor(Color.theme.accentColor)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -106,7 +105,7 @@ extension DetailView{
     
     private var additionalViewTitle: some View{
         Text("Additional Details")
-            .font(.title)
+            .font(.custom("Kanit-SemiBold", size: 30))
             .bold()
             .foregroundColor(Color.theme.accentColor)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -134,29 +133,31 @@ extension DetailView{
     
     private var cryptoDescription: some View{
         ZStack {
+            
+            
             if let cryptoDescription = vm.cryptoDescription, !cryptoDescription.isEmpty{
                 VStack(alignment: .leading, spacing: 1) {
                     Text(cryptoDescription)
                         .lineLimit(showDescription ? nil : 4)
                         .font(.callout)
                         .foregroundColor(Color.theme.secondaryText)
-                    
-                        Button(action: {
-                            withAnimation(.easeInOut){
-                                showDescription.toggle()
-                            }
-                        },label: {
-                            HStack(spacing: 5) {
-                                Text(showDescription ? "Less" : "Read more")
-                                    .font(.caption)
-                                    .fontWeight(.medium)
-                                    .padding(.vertical, 3)
-                                Image(systemName: showDescription ? "chevron.up" : "chevron.down")
-                                    .font(.caption)
-                                    .tint(Color.theme.red)
-                            }
-                        })
-                        .accentColor(Color.theme.red)
+
+                    Button(action: {
+                        withAnimation(.easeInOut){
+                            showDescription.toggle()
+                        }
+                    },label: {
+                        HStack(spacing: 5) {
+                            Text(showDescription ? "" : "Read more")
+                                .font(.custom("Kanit-Extralight", size: 12))
+                                .fontWeight(.medium)
+                                .padding(.vertical, 3)
+                            Image(systemName: showDescription ? "" : "chevron.down")
+                                .font(.caption)
+                                .tint(Color.theme.red)
+                        }
+                    })
+                    .accentColor(Color.theme.red)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }

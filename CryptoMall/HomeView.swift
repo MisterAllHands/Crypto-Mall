@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
-import Shimmer
+import SwiftUI_Shimmer
 import AVKit
+
 
 struct HomeView: View {
     
     @State var selectedTab = "HomeView"
     @State var showMenu: Bool = false
-        
+    @State  var showPortfolio: Bool = false // <- Animates to the right
+            
     @EnvironmentObject private var vm: HomeViewModel
-    @State private var showPortfolio: Bool = false // <- Animates to the right
     @State private var showPortfolioView: Bool = false // <- shows a new sheet
     @State private var selectCrypto:CryptoModel? = nil
     @State private var showSettingsView: Bool = false
@@ -23,25 +24,21 @@ struct HomeView: View {
     @State private var showDetailView: Bool = false
     @State private var isRefreshing = false
     @State private var refreshTimer: Timer?
-    
+    private var background = Backgroundlayer()
     
     var body: some View {
-            
             ZStack {
-                Color.theme.background
+                    background.homeViewGradient
                     .ignoresSafeArea()
-
                     .sheet(isPresented: $showPortfolioView) {
                         PortfolioView()
                             .environmentObject(vm)
                     }
 
                 VStack(spacing: 15) {
-
+                    
                     homeHeader
-
                     SearchbarView(searchText: $vm.searchText)
-
                     HomeStatsView(showPortfolio: $showPortfolio)
                         .redacted(reason: vm.isLoading ? .placeholder : [])
                         .shimmering(active: vm.isLoading ? true : false)
@@ -65,13 +62,7 @@ struct HomeView: View {
                     }
                     Spacer(minLength: 0)
                 }
-//                .sheet(isPresented: $showSettingsView) {
-//                    SettingsView()
-//                }
-
             }
-//            .scaleEffect(showMenu ? 0.84 : 1)
-//            .offset(x:showMenu ? getRect().width - 120 : 0)
             .background(
                 NavigationLink(
                     destination: DetailLoadingView(crypto: $selectCrypto),
@@ -104,7 +95,6 @@ extension HomeView {
                         showPortfolioView.toggle()
                     }else{
                         showMenu.toggle()
-                        print("ting")
                     }
                 }
                 .background(
@@ -113,9 +103,9 @@ extension HomeView {
             Spacer()
             Text(showPortfolio ? "Portfolio" : "Market Now")
                 .animation(.none)
-                .font(.headline)
+                .font(.custom("Kanit-Bold", size: 20))
                 .fontWeight(.heavy)
-                .foregroundColor(Color.theme.accentColor)
+                .foregroundColor(.white)
             Spacer()
             CircleButtonView(buttonName: "chevron.right")
                 .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
@@ -129,44 +119,48 @@ extension HomeView {
     }
     
     private var allCryptoList: some View {
-        List {
-            ForEach(vm.allCrypto) { crypto in
-                CryptoRowView(crypto: crypto, showHoldingColumn: false)
-                    .listRowInsets(.init(top: 10, leading: 10, bottom: 5, trailing: 10))
-                    .onTapGesture {
-                        segue(crypto: crypto)
-                    }
-                    .listRowBackground(Color.theme.background)
-                    .redacted(reason: vm.isLoading ? .placeholder : [])
-                    .shimmering(active: vm.isLoading ? true : false)
-            }
-        }
-        .listStyle(.plain)
-        .refreshable {
-            isRefreshing = true
-            Task {
-                await MainActor.run {
-                    vm.isLoading = true
-                }
-            }
-            SoundManager.instance.playSound(sound: .PullSound)
-            await Task.sleep(1_000_000_000) // 1 second delay
-            await vm.reloadData()
-            refreshTimer?.fire()
-            refreshTimer = Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { _ in
-                SoundManager.instance.playSound(sound: .RefreshSound)
-                Task {
-                    await MainActor.run {
-                        vm.isLoading = false
+                List {
+                    ForEach(vm.allCrypto) { crypto in
+                        CryptoRowView(crypto: crypto, showHoldingColumn: false)
+                            .listRowInsets(.init(top: 10, leading: 10, bottom: 5, trailing: 10))
+                            .onTapGesture {
+                                segue(crypto: crypto)
+                            }
+                            .listRowBackground(Color.clear)
+                            .redacted(reason: vm.isLoading ? .placeholder : [])
+                            .shimmering(active: vm.isLoading ? true : false)
                     }
                 }
-            })
-        }
-        .onChange(of: isRefreshing) { newValue in
-            if !newValue{
-                refreshTimer?.invalidate()
-            }
-        }
+                .listStyle(PlainListStyle())
+                .refreshable {
+                    hidesKeyboard()
+                    isRefreshing = true
+                    Task {
+                        await MainActor.run {
+                            vm.isLoading = true
+                        }
+                    }
+                    SoundManager.instance.playSound(sound: .PullSound)
+                    try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second delay
+                    await vm.reloadData()
+                    refreshTimer?.fire()
+                    refreshTimer = Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { _ in
+                        SoundManager.instance.playSound(sound: .RefreshSound)
+                        Task {
+                            await MainActor.run {
+                                vm.isLoading = false
+                            }
+                        }
+                    })
+                }
+                .onChange(of: isRefreshing) { newValue in
+                    if !newValue{
+                        refreshTimer?.invalidate()
+                    }
+                }
+                .onTapGesture {
+                    
+                }
     }
     
     private var portfolioEmptyList: some View {
@@ -193,7 +187,8 @@ extension HomeView {
                     .onTapGesture {
                         segue(crypto: crypto)
                     }
-                    .listRowBackground(Color.theme.background)
+                    .listRowBackground(Color.clear)
+                    .cornerRadius(20, style: .circular)
             }
         }
         .listStyle(.plain)
@@ -263,7 +258,11 @@ extension HomeView {
             .rotationEffect(Angle(degrees: vm.isLoading ? 360 : 0), anchor: .center)
         }
         .font(.caption)
-        .foregroundColor(Color.theme.secondaryText)
+        .foregroundColor(Color.white)
         .padding(.horizontal)
+    }
+    
+    private func hidesKeyboard(){
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

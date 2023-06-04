@@ -13,6 +13,7 @@ struct PortfolioView: View {
     @State private var selectedCrypto: CryptoModel? = nil
     @State private var cryptoAmount: String = ""
     @State private var showSaveButton: Bool = false
+    let backgroundLayer = Backgroundlayer()
     
         
     var body: some View {
@@ -37,7 +38,8 @@ struct PortfolioView: View {
                 }
             })
             .background(
-                Color.theme.background
+                backgroundLayer.mainViewGradient
+                    .ignoresSafeArea()
             )
             .onChange(of: vm.searchText) { newValue in
                 if newValue == "" {
@@ -105,22 +107,29 @@ extension PortfolioView {
         VStack(spacing: 20) {
             HStack{
                 Text("Current price of \(selectedCrypto?.symbol.uppercased() ?? "") :")
+                .font(.custom("Kanit-ExtraLight", size: 15))
                 Spacer()
                 Text(selectedCrypto?.currentPrice.asCurrencyWith6Decimals() ?? "")
+                .font(.custom("Kanit-SemiBold", size: 18))
              }
             Divider()
             HStack {
                 Text("Amount in wallet: ")
+                .font(.custom("Kanit-ExtraLight", size: 15))
                 Spacer()
                 TextField("Ex: 1.20", text: $cryptoAmount)
                     .multilineTextAlignment(.trailing)
+                    .font(.custom("Kanit-SemiBold", size: 18))
                     .keyboardType(.decimalPad)
             }
             Divider()
             HStack {
                 Text("Current value: ")
+                .font(.custom("Kanit-ExtraLight", size: 15))
                 Spacer()
                 Text(getCurrentValue().asCurrencyWith2Decimals())
+                .font(.custom("Kanit-SemiBold", size: 18))
+
             }
         }
         .animation(.none)

@@ -15,14 +15,23 @@ struct CircleButtonView: View {
         Image(systemName: buttonName)
             .renderingMode(.template)
             .font(.headline)
-            .foregroundColor(Color.theme.accentColor.opacity(1.2))
+            .foregroundColor(Color.white.opacity(1.2))
             .frame(width: 50, height: 50)
             .background(
                 Circle()
-                    .foregroundColor(Color.theme.background)
+                    .fill(
+                        RadialGradient(
+                                    gradient: Gradient(stops: [
+                                .init(color: Color(#colorLiteral(red: 0, green: 0.20555543899536133, blue: 1, alpha: 0.4399999976158142)), location: 0),
+                                .init(color: Color(#colorLiteral(red: 0, green: 0.20392157137393951, blue: 1, alpha: 0)), location: 1)]),
+                                    center: UnitPoint(x: 0.50, y: -2.0019999999999994),
+                                    startRadius: 15,
+                                    endRadius: 170
+                        )
+                    )
                 
             )
-            .shadow(color: Color.theme.accentColor.opacity(0.35), radius: 10, x: 0, y: 0)
+            .shadow(color: Color.white.opacity(0.85), radius: 25, x: 0, y: 0)
             .padding()
     }
 }

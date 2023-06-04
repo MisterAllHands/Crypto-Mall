@@ -19,6 +19,7 @@ struct TabButton: View {
         Button(action: {
             withAnimation(.spring()){
                 selectedTab = title
+                
             }
         }, label: {
             HStack(spacing: 15) {
@@ -27,7 +28,8 @@ struct TabButton: View {
                     .frame(width: 30)
                 
                 Text(title)
-                    .fontWeight(.semibold)
+                    .font(.custom("Kanit-SemiBold", size: 17))
+
             }
             .foregroundColor(selectedTab == title ? Color.theme.blueColor : .white)
             .padding(.vertical, 12)

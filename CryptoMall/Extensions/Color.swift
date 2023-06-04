@@ -23,6 +23,9 @@ struct ColorTheme {
     let secondaryText = Color("SecondaryTextColor")
     let menuColor = Color("MenuColor")
     let blueColor = Color("Blue")
+    let bgColor = Color("bg")
+    let topColor = Color("Top")
+    let gradientColorRed = Color("GradientColorRed")
 }
 
 struct LaunchTheme{

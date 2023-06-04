@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Shimmer
+import SwiftUI_Shimmer
 
 struct StatisticsView: View {
 
@@ -15,13 +15,13 @@ struct StatisticsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(stat.title)
-                .font(.caption)
-                .foregroundColor(Color.theme.secondaryText)
+                .font(.custom("Kanit-ExtraLight", size: 10))
+                .foregroundColor(Color.white.opacity(0.7))
 
             
                 Text(stat.value)
-                    .font(.headline)
-                    .foregroundColor(Color.theme.accentColor)
+                    .font(.custom("Kanit-SemiBold", size: 20))
+                    .foregroundColor(Color.white)
             
 
             HStack {
@@ -31,7 +31,7 @@ struct StatisticsView: View {
                         Angle(degrees: (stat.percentageChange ?? 0) >= 0 ? 0 : 180 ))
             
                 Text(stat.percentageChange?.aspercentString() ?? "")
-                    .font(.caption)
+                    .font(.custom("Kanit-ExtraLight", size: 12))
                     .bold()
             }
             .foregroundColor((stat.percentageChange ?? 0) >= 0 ? Color.theme.green : Color.theme.red)

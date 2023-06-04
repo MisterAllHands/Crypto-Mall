@@ -24,7 +24,7 @@ struct SideMenuView: View {
                 .padding(.top, 50)
             VStack(alignment: .leading, spacing: 6, content: {
                 Text("Mister All Hands")
-                    .font(.title)
+                    .font(.custom("Kanit-Bold", size: 26))
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
                 
@@ -34,7 +34,7 @@ struct SideMenuView: View {
                     
                 }, label: {
                     Text("View Profile")
-                        .fontWeight(.semibold)
+                        .font(.custom("Kanit-SemiBold", size: 15))
                         .foregroundColor(.white)
                         .opacity(0.7)
                 })
@@ -56,7 +56,7 @@ struct SideMenuView: View {
             VStack(alignment: .leading, spacing: 6) {
                 TabButton(image: "rectangle.righthalf.inset.fill.arrow.right", title: "Log Out", selectedTab: $selectedTab, animation: animation)
                     .padding(.leading, -15)
-                Text("Version 1.03")
+                Text("Version 1.05")
                     .font(.caption)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -70,7 +70,7 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView(selectedTab: .constant("HomeView"))
+        SideMenuView(selectedTab: .constant("Market"))
             .environmentObject(dev.homeVM)
     }
 }

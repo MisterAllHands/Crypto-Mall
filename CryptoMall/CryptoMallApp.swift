@@ -16,7 +16,9 @@ struct CryptoMallApp: App {
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor(Color.theme.accentColor)]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor(Color.theme.accentColor)]
-        UITableView.appearance().backgroundColor = UIColor.clear
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Kanit-Bold", size: 35)!]
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Kanit-Bold", size: 20)!]
+        UITableView.appearance().backgroundColor = .clear
     }
     
     var body: some Scene {
@@ -35,6 +37,7 @@ struct CryptoMallApp: App {
                 }
                 .zIndex(2.0)
             }
+            .environment(\.colorScheme, .dark)
         }
     }
 }

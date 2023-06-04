@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A40E65B29EF5913007B0FD2 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 2A40E65A29EF5913007B0FD2 /* Shimmer */; };
 		2A40E65D29EF597B007B0FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A40E65C29EF597B007B0FD2 /* Assets.xcassets */; };
 		ED5B276C29E564E500451559 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B276B29E564E500451559 /* PortfolioDataService.swift */; };
 		ED5B276E29E5B98400451559 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B276D29E5B98400451559 /* HapticManager.swift */; };
-		ED5B277029E5FB1700451559 /* CustomRefreshVie.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5B276F29E5FB1700451559 /* CustomRefreshVie.swift */; };
 		ED87E56429DED63400712E98 /* CryptoMallApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87E56329DED63400712E98 /* CryptoMallApp.swift */; };
 		ED87E56B29DED63700712E98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED87E56A29DED63700712E98 /* Preview Assets.xcassets */; };
 		ED87E58229DF26CF00712E98 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87E58129DF26CF00712E98 /* Color.swift */; };
@@ -58,15 +56,70 @@
 		EDA63DDB29ECAF750023F1BA /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DDA29ECAF750023F1BA /* CustomCorners.swift */; };
 		EDA63DDD29EDAD0D0023F1BA /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DDC29EDAD0C0023F1BA /* SideMenuView.swift */; };
 		EDA63DDF29EDADEB0023F1BA /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA63DDE29EDADEB0023F1BA /* MainTabView.swift */; };
+		EDB262EE29F023260071A7BF /* BlobShapeTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D029F023260071A7BF /* BlobShapeTop.swift */; };
+		EDB262EF29F023260071A7BF /* BackG3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D129F023260071A7BF /* BackG3.swift */; };
+		EDB262F029F023260071A7BF /* Line2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D229F023260071A7BF /* Line2.swift */; };
+		EDB262F129F023260071A7BF /* BackG1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D329F023260071A7BF /* BackG1.swift */; };
+		EDB262F229F023260071A7BF /* BoomerangRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D429F023260071A7BF /* BoomerangRight.swift */; };
+		EDB262F329F023260071A7BF /* BG4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D529F023260071A7BF /* BG4.swift */; };
+		EDB262F429F023260071A7BF /* AccountBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D629F023260071A7BF /* AccountBackground.swift */; };
+		EDB262F529F023260071A7BF /* Blob1Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D729F023260071A7BF /* Blob1Graphic.swift */; };
+		EDB262F629F023260071A7BF /* BackG2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D829F023260071A7BF /* BackG2.swift */; };
+		EDB262F729F023260071A7BF /* Line1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262D929F023260071A7BF /* Line1.swift */; };
+		EDB262F829F023260071A7BF /* YellowPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262DA29F023260071A7BF /* YellowPlanet.swift */; };
+		EDB262F929F023260071A7BF /* MaskBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262DB29F023260071A7BF /* MaskBlur.swift */; };
+		EDB262FA29F023260071A7BF /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262DC29F023260071A7BF /* Wave.swift */; };
+		EDB262FB29F023260071A7BF /* RedPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262DD29F023260071A7BF /* RedPlanet.swift */; };
+		EDB262FC29F023260071A7BF /* BoomerangBG.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262DE29F023260071A7BF /* BoomerangBG.swift */; };
+		EDB262FD29F023260071A7BF /* BoomerangLeftTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262DF29F023260071A7BF /* BoomerangLeftTop.swift */; };
+		EDB262FE29F023260071A7BF /* InsideFace5.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E029F023260071A7BF /* InsideFace5.swift */; };
+		EDB262FF29F023260071A7BF /* PurplePlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E129F023260071A7BF /* PurplePlanet.swift */; };
+		EDB2630029F023260071A7BF /* Blob2Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E229F023260071A7BF /* Blob2Graphic.swift */; };
+		EDB2630129F023260071A7BF /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E329F023260071A7BF /* Stars.swift */; };
+		EDB2630229F023260071A7BF /* BoomerangLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E429F023260071A7BF /* BoomerangLeft.swift */; };
+		EDB2630329F023260071A7BF /* InsideFace1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E529F023260071A7BF /* InsideFace1.swift */; };
+		EDB2630429F023260071A7BF /* BackgroundShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E629F023260071A7BF /* BackgroundShapes.swift */; };
+		EDB2630529F023260071A7BF /* InsideFace3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E729F023260071A7BF /* InsideFace3.swift */; };
+		EDB2630629F023260071A7BF /* FaceGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E829F023260071A7BF /* FaceGraphic.swift */; };
+		EDB2630729F023260071A7BF /* Blob3Graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262E929F023260071A7BF /* Blob3Graphic.swift */; };
+		EDB2630829F023260071A7BF /* InsideFace4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262EA29F023260071A7BF /* InsideFace4.swift */; };
+		EDB2630929F023260071A7BF /* InsideFace2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262EB29F023260071A7BF /* InsideFace2.swift */; };
+		EDB2630A29F023260071A7BF /* BigShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262EC29F023260071A7BF /* BigShape.swift */; };
+		EDB2630B29F023260071A7BF /* Wave1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB262ED29F023260071A7BF /* Wave1.swift */; };
+		EDB2630E29F023B40071A7BF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EDB2630D29F023B40071A7BF /* SwiftUIX */; };
+		EDB2631129F02C370071A7BF /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2631029F02C370071A7BF /* Background.swift */; };
+		EDB2631329F05A690071A7BF /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2631229F05A690071A7BF /* AboutView.swift */; };
+		EDB2632929F078520071A7BF /* Kanit-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631629F078520071A7BF /* Kanit-ExtraLight.ttf */; };
+		EDB2632A29F078520071A7BF /* Kanit-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631729F078520071A7BF /* Kanit-ThinItalic.ttf */; };
+		EDB2632B29F078520071A7BF /* Kanit-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631829F078520071A7BF /* Kanit-BoldItalic.ttf */; };
+		EDB2632C29F078520071A7BF /* Kanit-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631929F078520071A7BF /* Kanit-SemiBold.ttf */; };
+		EDB2632D29F078520071A7BF /* Kanit-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631A29F078520071A7BF /* Kanit-Black.ttf */; };
+		EDB2632E29F078520071A7BF /* Kanit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631B29F078520071A7BF /* Kanit-Regular.ttf */; };
+		EDB2632F29F078520071A7BF /* Kanit-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631C29F078520071A7BF /* Kanit-Italic.ttf */; };
+		EDB2633029F078520071A7BF /* Kanit-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631D29F078520071A7BF /* Kanit-MediumItalic.ttf */; };
+		EDB2633129F078520071A7BF /* Kanit-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631E29F078520071A7BF /* Kanit-Thin.ttf */; };
+		EDB2633229F078520071A7BF /* Kanit-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2631F29F078520071A7BF /* Kanit-ExtraBoldItalic.ttf */; };
+		EDB2633329F078520071A7BF /* Kanit-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2632029F078520071A7BF /* Kanit-ExtraBold.ttf */; };
+		EDB2633429F078520071A7BF /* Kanit-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2632129F078520071A7BF /* Kanit-Bold.ttf */; };
+		EDB2633529F078520071A7BF /* Kanit-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2632229F078520071A7BF /* Kanit-SemiBoldItalic.ttf */; };
+		EDB2633629F078520071A7BF /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = EDB2632329F078520071A7BF /* OFL.txt */; };
+		EDB2633729F078520071A7BF /* Kanit-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2632429F078520071A7BF /* Kanit-BlackItalic.ttf */; };
+		EDB2633829F078520071A7BF /* Kanit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2632529F078520071A7BF /* Kanit-Light.ttf */; };
+		EDB2633929F078520071A7BF /* Kanit-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2632629F078520071A7BF /* Kanit-LightItalic.ttf */; };
+		EDB2633A29F078520071A7BF /* Kanit-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2632729F078520071A7BF /* Kanit-ExtraLightItalic.ttf */; };
+		EDB2633B29F078520071A7BF /* Kanit-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB2632829F078520071A7BF /* Kanit-Medium.ttf */; };
 		EDD2E73F29E44BDF001A912A /* PortfolioDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDD2E73D29E44BDF001A912A /* PortfolioDataModel.xcdatamodeld */; };
+		EDEB9BD12A2CA6B300BA5594 /* SettingsColums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB9BD02A2CA6B200BA5594 /* SettingsColums.swift */; };
+		FE38C5989729C6C8A2589A56 /* Pods_CryptoMall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601A7C035514DB88DDE1402B /* Pods_CryptoMall.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A40E65C29EF597B007B0FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		601A7C035514DB88DDE1402B /* Pods_CryptoMall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85A2EB820BAF514D7B1A6882 /* Pods-CryptoMall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMall.debug.xcconfig"; path = "Target Support Files/Pods-CryptoMall/Pods-CryptoMall.debug.xcconfig"; sourceTree = "<group>"; };
+		9B8C63DCFE872805180BB978 /* Pods-CryptoMall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMall.release.xcconfig"; path = "Target Support Files/Pods-CryptoMall/Pods-CryptoMall.release.xcconfig"; sourceTree = "<group>"; };
 		ED5B276B29E564E500451559 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
 		ED5B276D29E5B98400451559 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
-		ED5B276F29E5FB1700451559 /* CustomRefreshVie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRefreshVie.swift; sourceTree = "<group>"; };
 		ED87E56029DED63400712E98 /* CryptoMall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED87E56329DED63400712E98 /* CryptoMallApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMallApp.swift; sourceTree = "<group>"; };
 		ED87E56A29DED63700712E98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -114,7 +167,59 @@
 		EDA63DDA29ECAF750023F1BA /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
 		EDA63DDC29EDAD0C0023F1BA /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		EDA63DDE29EDADEB0023F1BA /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		EDB262D029F023260071A7BF /* BlobShapeTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobShapeTop.swift; sourceTree = "<group>"; };
+		EDB262D129F023260071A7BF /* BackG3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackG3.swift; sourceTree = "<group>"; };
+		EDB262D229F023260071A7BF /* Line2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line2.swift; sourceTree = "<group>"; };
+		EDB262D329F023260071A7BF /* BackG1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackG1.swift; sourceTree = "<group>"; };
+		EDB262D429F023260071A7BF /* BoomerangRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomerangRight.swift; sourceTree = "<group>"; };
+		EDB262D529F023260071A7BF /* BG4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BG4.swift; sourceTree = "<group>"; };
+		EDB262D629F023260071A7BF /* AccountBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBackground.swift; sourceTree = "<group>"; };
+		EDB262D729F023260071A7BF /* Blob1Graphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob1Graphic.swift; sourceTree = "<group>"; };
+		EDB262D829F023260071A7BF /* BackG2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackG2.swift; sourceTree = "<group>"; };
+		EDB262D929F023260071A7BF /* Line1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line1.swift; sourceTree = "<group>"; };
+		EDB262DA29F023260071A7BF /* YellowPlanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowPlanet.swift; sourceTree = "<group>"; };
+		EDB262DB29F023260071A7BF /* MaskBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskBlur.swift; sourceTree = "<group>"; };
+		EDB262DC29F023260071A7BF /* Wave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		EDB262DD29F023260071A7BF /* RedPlanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedPlanet.swift; sourceTree = "<group>"; };
+		EDB262DE29F023260071A7BF /* BoomerangBG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomerangBG.swift; sourceTree = "<group>"; };
+		EDB262DF29F023260071A7BF /* BoomerangLeftTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomerangLeftTop.swift; sourceTree = "<group>"; };
+		EDB262E029F023260071A7BF /* InsideFace5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace5.swift; sourceTree = "<group>"; };
+		EDB262E129F023260071A7BF /* PurplePlanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurplePlanet.swift; sourceTree = "<group>"; };
+		EDB262E229F023260071A7BF /* Blob2Graphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob2Graphic.swift; sourceTree = "<group>"; };
+		EDB262E329F023260071A7BF /* Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
+		EDB262E429F023260071A7BF /* BoomerangLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomerangLeft.swift; sourceTree = "<group>"; };
+		EDB262E529F023260071A7BF /* InsideFace1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace1.swift; sourceTree = "<group>"; };
+		EDB262E629F023260071A7BF /* BackgroundShapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundShapes.swift; sourceTree = "<group>"; };
+		EDB262E729F023260071A7BF /* InsideFace3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace3.swift; sourceTree = "<group>"; };
+		EDB262E829F023260071A7BF /* FaceGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceGraphic.swift; sourceTree = "<group>"; };
+		EDB262E929F023260071A7BF /* Blob3Graphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blob3Graphic.swift; sourceTree = "<group>"; };
+		EDB262EA29F023260071A7BF /* InsideFace4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace4.swift; sourceTree = "<group>"; };
+		EDB262EB29F023260071A7BF /* InsideFace2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsideFace2.swift; sourceTree = "<group>"; };
+		EDB262EC29F023260071A7BF /* BigShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigShape.swift; sourceTree = "<group>"; };
+		EDB262ED29F023260071A7BF /* Wave1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wave1.swift; sourceTree = "<group>"; };
+		EDB2631029F02C370071A7BF /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		EDB2631229F05A690071A7BF /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		EDB2631629F078520071A7BF /* Kanit-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-ExtraLight.ttf"; sourceTree = "<group>"; };
+		EDB2631729F078520071A7BF /* Kanit-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-ThinItalic.ttf"; sourceTree = "<group>"; };
+		EDB2631829F078520071A7BF /* Kanit-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-BoldItalic.ttf"; sourceTree = "<group>"; };
+		EDB2631929F078520071A7BF /* Kanit-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-SemiBold.ttf"; sourceTree = "<group>"; };
+		EDB2631A29F078520071A7BF /* Kanit-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Black.ttf"; sourceTree = "<group>"; };
+		EDB2631B29F078520071A7BF /* Kanit-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Regular.ttf"; sourceTree = "<group>"; };
+		EDB2631C29F078520071A7BF /* Kanit-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Italic.ttf"; sourceTree = "<group>"; };
+		EDB2631D29F078520071A7BF /* Kanit-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-MediumItalic.ttf"; sourceTree = "<group>"; };
+		EDB2631E29F078520071A7BF /* Kanit-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Thin.ttf"; sourceTree = "<group>"; };
+		EDB2631F29F078520071A7BF /* Kanit-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		EDB2632029F078520071A7BF /* Kanit-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-ExtraBold.ttf"; sourceTree = "<group>"; };
+		EDB2632129F078520071A7BF /* Kanit-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Bold.ttf"; sourceTree = "<group>"; };
+		EDB2632229F078520071A7BF /* Kanit-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		EDB2632329F078520071A7BF /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		EDB2632429F078520071A7BF /* Kanit-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-BlackItalic.ttf"; sourceTree = "<group>"; };
+		EDB2632529F078520071A7BF /* Kanit-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Light.ttf"; sourceTree = "<group>"; };
+		EDB2632629F078520071A7BF /* Kanit-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-LightItalic.ttf"; sourceTree = "<group>"; };
+		EDB2632729F078520071A7BF /* Kanit-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		EDB2632829F078520071A7BF /* Kanit-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Medium.ttf"; sourceTree = "<group>"; };
 		EDD2E73E29E44BDF001A912A /* PortfolioDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioDataModel.xcdatamodel; sourceTree = "<group>"; };
+		EDEB9BD02A2CA6B200BA5594 /* SettingsColums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsColums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,13 +227,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A40E65B29EF5913007B0FD2 /* Shimmer in Frameworks */,
+				FE38C5989729C6C8A2589A56 /* Pods_CryptoMall.framework in Frameworks */,
+				EDB2630E29F023B40071A7BF /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BEF305CC0E65D01245E7B05 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85A2EB820BAF514D7B1A6882 /* Pods-CryptoMall.debug.xcconfig */,
+				9B8C63DCFE872805180BB978 /* Pods-CryptoMall.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A40B797604A18B4A4652A175 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +258,7 @@
 				ED87E56229DED63400712E98 /* CryptoMall */,
 				ED87E56129DED63400712E98 /* Products */,
 				A40B797604A18B4A4652A175 /* Frameworks */,
+				1BEF305CC0E65D01245E7B05 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,13 +274,14 @@
 			isa = PBXGroup;
 			children = (
 				ED87E56329DED63400712E98 /* CryptoMallApp.swift */,
+				EDA63DD729ECADD30023F1BA /* ContentView.swift */,
 				ED87E5A329E0C55D00712E98 /* Utilities */,
 				ED87E5A029E03E6C00712E98 /* Services */,
 				ED87E59529E002F600712E98 /* Models */,
 				ED87E58329DF292600712E98 /* Core */,
 				ED87E57629DF172200712E98 /* Extensions */,
+				EDB262CF29F023260071A7BF /* Graphics */,
 				EDA63DCB29EC0B400023F1BA /* Sounds */,
-				EDA63DD729ECADD30023F1BA /* ContentView.swift */,
 				ED87E56929DED63700712E98 /* Preview Content */,
 				2A40E65C29EF597B007B0FD2 /* Assets.xcassets */,
 			);
@@ -221,7 +338,7 @@
 				ED87E5B729E2BDCA00712E98 /* HomeStatsView.swift */,
 				ED87E59829E0166B00712E98 /* CryptoRowView.swift */,
 				ED87E5C029E3108500712E98 /* PortfolioView.swift */,
-				ED5B276F29E5FB1700451559 /* CustomRefreshVie.swift */,
+				ED87E5B529E2B97000712E98 /* StatisticsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,9 +354,11 @@
 		ED87E58929DF2AA300712E98 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EDB2630F29F02C270071A7BF /* Background */,
 				EDA63DD929ECAF620023F1BA /* CustomCorners */,
 				EDA63DD029ECAAA30023F1BA /* TabButton */,
 				ED87E5C629E33D5900712E98 /* Buttons */,
+				EDB2631529F078520071A7BF /* Fonts */,
 				ED87E5BD29E2CD1600712E98 /* SearchBar */,
 				ED87E5A629E0CBB800712E98 /* CoinImage */,
 				ED87E58A29DF2AAC00712E98 /* CircleButton */,
@@ -305,7 +424,6 @@
 			isa = PBXGroup;
 			children = (
 				ED87E5AF29E19B4B00712E98 /* SearchbarView.swift */,
-				ED87E5B529E2B97000712E98 /* StatisticsView.swift */,
 			);
 			path = SearchBar;
 			sourceTree = "<group>";
@@ -356,6 +474,8 @@
 			isa = PBXGroup;
 			children = (
 				ED9B43E229E867C500E5D645 /* SettingsView.swift */,
+				EDB2631229F05A690071A7BF /* AboutView.swift */,
+				EDEB9BD02A2CA6B200BA5594 /* SettingsColums.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +532,77 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		EDB262CF29F023260071A7BF /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				EDB262D029F023260071A7BF /* BlobShapeTop.swift */,
+				EDB262D129F023260071A7BF /* BackG3.swift */,
+				EDB262D229F023260071A7BF /* Line2.swift */,
+				EDB262D329F023260071A7BF /* BackG1.swift */,
+				EDB262D429F023260071A7BF /* BoomerangRight.swift */,
+				EDB262D529F023260071A7BF /* BG4.swift */,
+				EDB262D629F023260071A7BF /* AccountBackground.swift */,
+				EDB262D729F023260071A7BF /* Blob1Graphic.swift */,
+				EDB262D829F023260071A7BF /* BackG2.swift */,
+				EDB262D929F023260071A7BF /* Line1.swift */,
+				EDB262DA29F023260071A7BF /* YellowPlanet.swift */,
+				EDB262DB29F023260071A7BF /* MaskBlur.swift */,
+				EDB262DC29F023260071A7BF /* Wave.swift */,
+				EDB262DD29F023260071A7BF /* RedPlanet.swift */,
+				EDB262DE29F023260071A7BF /* BoomerangBG.swift */,
+				EDB262DF29F023260071A7BF /* BoomerangLeftTop.swift */,
+				EDB262E029F023260071A7BF /* InsideFace5.swift */,
+				EDB262E129F023260071A7BF /* PurplePlanet.swift */,
+				EDB262E229F023260071A7BF /* Blob2Graphic.swift */,
+				EDB262E329F023260071A7BF /* Stars.swift */,
+				EDB262E429F023260071A7BF /* BoomerangLeft.swift */,
+				EDB262E529F023260071A7BF /* InsideFace1.swift */,
+				EDB262E629F023260071A7BF /* BackgroundShapes.swift */,
+				EDB262E729F023260071A7BF /* InsideFace3.swift */,
+				EDB262E829F023260071A7BF /* FaceGraphic.swift */,
+				EDB262E929F023260071A7BF /* Blob3Graphic.swift */,
+				EDB262EA29F023260071A7BF /* InsideFace4.swift */,
+				EDB262EB29F023260071A7BF /* InsideFace2.swift */,
+				EDB262EC29F023260071A7BF /* BigShape.swift */,
+				EDB262ED29F023260071A7BF /* Wave1.swift */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		EDB2630F29F02C270071A7BF /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				EDB2631029F02C370071A7BF /* Background.swift */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		EDB2631529F078520071A7BF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EDB2631629F078520071A7BF /* Kanit-ExtraLight.ttf */,
+				EDB2631729F078520071A7BF /* Kanit-ThinItalic.ttf */,
+				EDB2631829F078520071A7BF /* Kanit-BoldItalic.ttf */,
+				EDB2631929F078520071A7BF /* Kanit-SemiBold.ttf */,
+				EDB2631A29F078520071A7BF /* Kanit-Black.ttf */,
+				EDB2631B29F078520071A7BF /* Kanit-Regular.ttf */,
+				EDB2631C29F078520071A7BF /* Kanit-Italic.ttf */,
+				EDB2631D29F078520071A7BF /* Kanit-MediumItalic.ttf */,
+				EDB2631E29F078520071A7BF /* Kanit-Thin.ttf */,
+				EDB2631F29F078520071A7BF /* Kanit-ExtraBoldItalic.ttf */,
+				EDB2632029F078520071A7BF /* Kanit-ExtraBold.ttf */,
+				EDB2632129F078520071A7BF /* Kanit-Bold.ttf */,
+				EDB2632229F078520071A7BF /* Kanit-SemiBoldItalic.ttf */,
+				EDB2632329F078520071A7BF /* OFL.txt */,
+				EDB2632429F078520071A7BF /* Kanit-BlackItalic.ttf */,
+				EDB2632529F078520071A7BF /* Kanit-Light.ttf */,
+				EDB2632629F078520071A7BF /* Kanit-LightItalic.ttf */,
+				EDB2632729F078520071A7BF /* Kanit-ExtraLightItalic.ttf */,
+				EDB2632829F078520071A7BF /* Kanit-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -419,9 +610,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED87E56E29DED63700712E98 /* Build configuration list for PBXNativeTarget "CryptoMall" */;
 			buildPhases = (
+				1180196AD6DF44C968636FFF /* [CP] Check Pods Manifest.lock */,
 				ED87E55C29DED63400712E98 /* Sources */,
 				ED87E55D29DED63400712E98 /* Frameworks */,
 				ED87E55E29DED63400712E98 /* Resources */,
+				C30C2965EE73DA1AE1EE19AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -429,7 +622,7 @@
 			);
 			name = CryptoMall;
 			packageProductDependencies = (
-				2A40E65A29EF5913007B0FD2 /* Shimmer */,
+				EDB2630D29F023B40071A7BF /* SwiftUIX */,
 			);
 			productName = CryptoMall;
 			productReference = ED87E56029DED63400712E98 /* CryptoMall.app */;
@@ -460,7 +653,7 @@
 			);
 			mainGroup = ED87E55729DED63400712E98;
 			packageReferences = (
-				2A40E65929EF5913007B0FD2 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
+				EDB2630C29F023B40071A7BF /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = ED87E56129DED63400712E98 /* Products */;
 			projectDirPath = "";
@@ -477,14 +670,75 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDA63DCA29EC0A290023F1BA /* PullSound.mp3 in Resources */,
+				EDB2633B29F078520071A7BF /* Kanit-Medium.ttf in Resources */,
 				ED9B43F129E93D2E00E5D645 /* LaunchScreen.storyboard in Resources */,
+				EDB2633A29F078520071A7BF /* Kanit-ExtraLightItalic.ttf in Resources */,
+				EDB2633229F078520071A7BF /* Kanit-ExtraBoldItalic.ttf in Resources */,
+				EDB2632F29F078520071A7BF /* Kanit-Italic.ttf in Resources */,
+				EDB2633429F078520071A7BF /* Kanit-Bold.ttf in Resources */,
+				EDB2633929F078520071A7BF /* Kanit-LightItalic.ttf in Resources */,
+				EDB2633529F078520071A7BF /* Kanit-SemiBoldItalic.ttf in Resources */,
 				2A40E65D29EF597B007B0FD2 /* Assets.xcassets in Resources */,
+				EDB2633829F078520071A7BF /* Kanit-Light.ttf in Resources */,
+				EDB2632B29F078520071A7BF /* Kanit-BoldItalic.ttf in Resources */,
+				EDB2632D29F078520071A7BF /* Kanit-Black.ttf in Resources */,
+				EDB2633629F078520071A7BF /* OFL.txt in Resources */,
+				EDB2632A29F078520071A7BF /* Kanit-ThinItalic.ttf in Resources */,
+				EDB2633329F078520071A7BF /* Kanit-ExtraBold.ttf in Resources */,
+				EDB2633729F078520071A7BF /* Kanit-BlackItalic.ttf in Resources */,
+				EDB2632C29F078520071A7BF /* Kanit-SemiBold.ttf in Resources */,
+				EDB2633029F078520071A7BF /* Kanit-MediumItalic.ttf in Resources */,
 				ED87E56B29DED63700712E98 /* Preview Assets.xcassets in Resources */,
+				EDB2632929F078520071A7BF /* Kanit-ExtraLight.ttf in Resources */,
+				EDB2633129F078520071A7BF /* Kanit-Thin.ttf in Resources */,
+				EDB2632E29F078520071A7BF /* Kanit-Regular.ttf in Resources */,
 				EDA63DC929EC0A290023F1BA /* RefreshSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1180196AD6DF44C968636FFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoMall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C30C2965EE73DA1AE1EE19AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoMall/Pods-CryptoMall-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoMall/Pods-CryptoMall-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CryptoMall/Pods-CryptoMall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED87E55C29DED63400712E98 /* Sources */ = {
@@ -493,47 +747,79 @@
 			files = (
 				ED9B43DF29E8506400E5D645 /* String.swift in Sources */,
 				ED9B43F329E93F1200E5D645 /* LaunchView.swift in Sources */,
+				EDB262FC29F023260071A7BF /* BoomerangBG.swift in Sources */,
 				ED87E58829DF296E00712E98 /* HomeView.swift in Sources */,
 				ED87E5A229E03E9900712E98 /* CryptoDataSeervices.swift in Sources */,
+				EDB2630929F023260071A7BF /* InsideFace2.swift in Sources */,
+				EDB262F429F023260071A7BF /* AccountBackground.swift in Sources */,
 				ED87E5AE29E1907800712E98 /* DataStorage.swift in Sources */,
 				EDA63DDB29ECAF750023F1BA /* CustomCorners.swift in Sources */,
 				ED87E56429DED63400712E98 /* CryptoMallApp.swift in Sources */,
+				EDB262FF29F023260071A7BF /* PurplePlanet.swift in Sources */,
 				ED87E59729E0030900712E98 /* CryptoModel.swift in Sources */,
 				ED87E5BA29E2C11800712E98 /* MarketDataModel.swift in Sources */,
+				EDEB9BD12A2CA6B300BA5594 /* SettingsColums.swift in Sources */,
 				ED87E59229DFFE9D00712E98 /* CircleButtonAnimationView.swift in Sources */,
 				EDA63DCD29EC394F0023F1BA /* SoundManager.swift in Sources */,
 				ED87E5AA29E1887B00712E98 /* CryptoImageService.swift in Sources */,
 				EDA63DDD29EDAD0D0023F1BA /* SideMenuView.swift in Sources */,
 				ED87E59B29E016D500712E98 /* PreviewProvider.swift in Sources */,
+				EDB262F829F023260071A7BF /* YellowPlanet.swift in Sources */,
 				ED87E5AC29E18A7800712E98 /* CoinImageViewModel.swift in Sources */,
 				ED9B43E329E867C500E5D645 /* SettingsView.swift in Sources */,
+				EDB2630429F023260071A7BF /* BackgroundShapes.swift in Sources */,
 				ED9B43DD29E837E700E5D645 /* Date.swift in Sources */,
 				ED87E5B629E2B97000712E98 /* StatisticsView.swift in Sources */,
+				EDB262FD29F023260071A7BF /* BoomerangLeftTop.swift in Sources */,
+				EDB262EF29F023260071A7BF /* BackG3.swift in Sources */,
+				EDB262FB29F023260071A7BF /* RedPlanet.swift in Sources */,
 				ED87E59929E0166B00712E98 /* CryptoRowView.swift in Sources */,
+				EDB2630229F023260071A7BF /* BoomerangLeft.swift in Sources */,
+				EDB262F929F023260071A7BF /* MaskBlur.swift in Sources */,
+				EDB2630329F023260071A7BF /* InsideFace1.swift in Sources */,
+				EDB2630629F023260071A7BF /* FaceGraphic.swift in Sources */,
 				EDA63DCF29ECA6CD0023F1BA /* MainView.swift in Sources */,
 				EDA63DDF29EDADEB0023F1BA /* MainTabView.swift in Sources */,
 				ED87E59F29E033BB00712E98 /* HomeViewModel.swift in Sources */,
 				ED87E5B229E212C700712E98 /* UIAplication.swift in Sources */,
+				EDB262F129F023260071A7BF /* BackG1.swift in Sources */,
+				EDB262F329F023260071A7BF /* BG4.swift in Sources */,
+				EDB2630729F023260071A7BF /* Blob3Graphic.swift in Sources */,
 				ED87E58C29DF2AC800712E98 /* CircleButtonView.swift in Sources */,
 				ED5B276E29E5B98400451559 /* HapticManager.swift in Sources */,
+				EDB262F629F023260071A7BF /* BackG2.swift in Sources */,
+				EDB2630B29F023260071A7BF /* Wave1.swift in Sources */,
+				EDB2631129F02C370071A7BF /* Background.swift in Sources */,
 				ED87E5C529E33B4800712E98 /* CryptoLogoView.swift in Sources */,
 				ED87E5B829E2BDCA00712E98 /* HomeStatsView.swift in Sources */,
 				ED9B43D729E808AC00E5D645 /* CryptoDetailModel.swift in Sources */,
+				EDB262FE29F023260071A7BF /* InsideFace5.swift in Sources */,
 				ED87E5C329E337FA00712E98 /* XmarkButton.swift in Sources */,
+				EDB262EE29F023260071A7BF /* BlobShapeTop.swift in Sources */,
 				ED87E5BC29E2C54A00712E98 /* MarketDataService.swift in Sources */,
 				EDA63DD829ECADD30023F1BA /* ContentView.swift in Sources */,
 				EDA63DD229ECAAB30023F1BA /* TabButton.swift in Sources */,
+				EDB2630529F023260071A7BF /* InsideFace3.swift in Sources */,
 				ED87E59D29E01F2000712E98 /* Double.swift in Sources */,
 				ED9B43DB29E82F1800E5D645 /* ChartView.swift in Sources */,
+				EDB262F529F023260071A7BF /* Blob1Graphic.swift in Sources */,
+				EDB2631329F05A690071A7BF /* AboutView.swift in Sources */,
 				ED9B43D929E80B6D00E5D645 /* CryptoDetailService.swift in Sources */,
 				ED87E5B029E19B4B00712E98 /* SearchbarView.swift in Sources */,
+				EDB2630829F023260071A7BF /* InsideFace4.swift in Sources */,
+				EDB262FA29F023260071A7BF /* Wave.swift in Sources */,
 				ED87E5A529E0C57D00712E98 /* NetManager.swift in Sources */,
 				ED87E5C129E3108500712E98 /* PortfolioView.swift in Sources */,
+				EDB2630029F023260071A7BF /* Blob2Graphic.swift in Sources */,
 				ED9B43D329E7FCDF00E5D645 /* DetailView.swift in Sources */,
-				ED5B277029E5FB1700451559 /* CustomRefreshVie.swift in Sources */,
+				EDB2630A29F023260071A7BF /* BigShape.swift in Sources */,
+				EDB2630129F023260071A7BF /* Stars.swift in Sources */,
+				EDB262F729F023260071A7BF /* Line1.swift in Sources */,
 				EDD2E73F29E44BDF001A912A /* PortfolioDataModel.xcdatamodeld in Sources */,
+				EDB262F229F023260071A7BF /* BoomerangRight.swift in Sources */,
 				ED87E58229DF26CF00712E98 /* Color.swift in Sources */,
 				ED87E5B429E2198700712E98 /* Statistics.swift in Sources */,
+				EDB262F029F023260071A7BF /* Line2.swift in Sources */,
 				ED87E5A829E0CBC900712E98 /* CryptoImageView.swift in Sources */,
 				ED9B43D529E7FD6B00E5D645 /* DetailViewModel.swift in Sources */,
 				ED5B276C29E564E500451559 /* PortfolioDataService.swift in Sources */,
@@ -659,15 +945,18 @@
 		};
 		ED87E56F29DED63700712E98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85A2EB820BAF514D7B1A6882 /* Pods-CryptoMall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptoMall/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 733XWR5Y23;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoMall/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto-Space";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -680,7 +969,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aclinaev.CryptoMall;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aclinaev.Crypto-Mall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -690,15 +979,18 @@
 		};
 		ED87E57029DED63700712E98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B8C63DCFE872805180BB978 /* Pods-CryptoMall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"CryptoMall/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 733XWR5Y23;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoMall/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto-Space";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -711,7 +1003,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aclinaev.CryptoMall;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aclinaev.Crypto-Mall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -743,21 +1035,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2A40E65929EF5913007B0FD2 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+		EDB2630C29F023B40071A7BF /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer.git";
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.3.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2A40E65A29EF5913007B0FD2 /* Shimmer */ = {
+		EDB2630D29F023B40071A7BF /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2A40E65929EF5913007B0FD2 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
-			productName = Shimmer;
+			package = EDB2630C29F023B40071A7BF /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
 		};
 /* End XCSwiftPackageProductDependency section */
 
